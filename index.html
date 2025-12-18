@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Alec Jens Klamroth - Software Developer | Information Engineering Student Portfolio">
+    <meta name="description" content="Alec Jens Klamroth - Software Developer | Information Engineering Student at HAW Hamburg">
     <meta name="author" content="Alec Jens Klamroth">
     <title>Alec Klamroth - Software Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Root Variables */
+        /* HAW Hamburg Color Palette */
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --tertiary-color: #a78bfa;
-            --accent-color: #06b6d4;
-            --dark-bg: #0f172a;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --text-light: #e2e8f0;
-            --text-muted: #94a3b8;
-            --border-light: rgba(255, 255, 255, 0.1);
-            --shadow-color: rgba(99, 102, 241, 0.15);
+            --haw-primary: #1E439A;
+            --haw-primary-dark: #152d6b;
+            --haw-primary-light: #2a5bc4;
+            --haw-secondary: #A0BDDE;
+            --haw-secondary-light: #c5d9ed;
+            --haw-accent: #4a90d9;
+            --dark-bg: #0a0f1a;
+            --card-bg: rgba(30, 67, 154, 0.08);
+            --glass-bg: rgba(160, 189, 222, 0.05);
+            --text-light: #e8eef5;
+            --text-muted: #9db4d0;
+            --border-light: rgba(160, 189, 222, 0.15);
+            --border-hover: rgba(30, 67, 154, 0.5);
         }
 
         * {
@@ -32,42 +38,98 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: var(--text-light);
-            background: #030712;
+            background: var(--dark-bg);
             min-height: 100vh;
             overflow-x: hidden;
         }
 
-        /* Subtle Animated Background - Slow moving gradients */
-        body::before {
-            content: '';
+        /* Animated Background with HAW colors */
+        .bg-animation {
             position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
-            z-index: -2;
-            animation: subtleShift 30s ease-in-out infinite;
+                radial-gradient(ellipse at 15% 20%, rgba(30, 67, 154, 0.25) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 80%, rgba(160, 189, 222, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(30, 67, 154, 0.1) 0%, transparent 70%);
         }
 
-        @keyframes subtleShift {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        /* Floating Orbs Animation */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
         }
 
-        /* Fine grain noise overlay for texture */
-        body::after {
-            content: '';
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--haw-primary);
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--haw-secondary);
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -7s;
+        }
+
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: var(--haw-accent);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(30px, -30px) scale(1.05);
+            }
+            50% {
+                transform: translate(-20px, 20px) scale(0.95);
+            }
+            75% {
+                transform: translate(-30px, -20px) scale(1.02);
+            }
+        }
+
+        /* Grid pattern overlay */
+        .grid-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            opacity: 0.03;
+            background-image: 
+                linear-gradient(rgba(160, 189, 222, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(160, 189, 222, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
             z-index: -1;
             pointer-events: none;
         }
@@ -78,16 +140,18 @@
             margin: 0 auto;
             padding: 2rem;
             padding-top: 5rem;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Navigation - Clean and Minimal */
+        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            background: rgba(3, 7, 18, 0.8);
+            background: rgba(10, 15, 26, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-light);
@@ -97,17 +161,29 @@
         .navbar-content {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .navbar-logo {
+            height: 36px;
+            width: auto;
+            border-radius: 4px;
+        }
+
+        .navbar-title {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: white;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.3px;
         }
 
         .navbar-links {
@@ -132,7 +208,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--haw-primary);
             transition: width 0.2s ease;
         }
 
@@ -150,57 +226,71 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 3rem;
             margin-bottom: 2.5rem;
             display: flex;
             align-items: center;
             gap: 3rem;
+            position: relative;
+            overflow: hidden;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+            transform: translateY(30px);
+            animation: slideUp 0.7s ease forwards;
         }
 
-        @keyframes fadeInUp {
+        @keyframes slideUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+        /* Accent line on hero */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--haw-primary), var(--haw-secondary));
+        }
+
         .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            width: 170px;
+            height: 170px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--haw-primary), var(--haw-secondary));
             flex-shrink: 0;
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+            box-shadow: 
+                0 20px 50px rgba(30, 67, 154, 0.3),
+                0 0 0 1px rgba(160, 189, 222, 0.2);
+            position: relative;
         }
 
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 16px;
+            border-radius: 20px;
         }
 
         .hero-content h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 0.3rem;
             color: white;
             font-weight: 700;
-            letter-spacing: -1px;
+            letter-spacing: -1.5px;
         }
 
         .hero-content .subtitle {
-            font-size: 1.15rem;
-            background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            font-size: 1.2rem;
+            color: var(--haw-secondary);
             margin-bottom: 1rem;
             font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .hero-content p {
@@ -212,7 +302,7 @@
 
         .contact-info {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.7rem;
             flex-wrap: wrap;
         }
 
@@ -221,19 +311,20 @@
             align-items: center;
             gap: 0.4rem;
             padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(30, 67, 154, 0.15);
             border: 1px solid var(--border-light);
             border-radius: 100px;
             font-size: 0.85rem;
             color: var(--text-muted);
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
         .contact-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--primary-color);
+            background: rgba(30, 67, 154, 0.3);
+            border-color: var(--haw-primary);
             color: white;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 67, 154, 0.25);
         }
 
         .contact-item a {
@@ -248,22 +339,26 @@
         }
 
         #skill-prompt-text {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             font-weight: 500;
         }
 
         .skill-filters-wrapper {
             margin-bottom: 2.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.7s ease forwards;
+            animation-delay: 0.1s;
         }
 
         .skill-filters {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             padding: 1rem;
             background: var(--glass-bg);
             border: 1px solid var(--border-light);
@@ -272,7 +367,7 @@
         }
 
         .skill-button {
-            padding: 0.6rem 1.2rem;
+            padding: 0.55rem 1.1rem;
             background: transparent;
             border: 1px solid var(--border-light);
             border-radius: 100px;
@@ -280,19 +375,21 @@
             font-size: 0.85rem;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
+            font-family: inherit;
         }
 
         .skill-button:hover {
-            background: rgba(99, 102, 241, 0.1);
-            border-color: var(--primary-color);
+            background: rgba(30, 67, 154, 0.2);
+            border-color: var(--haw-primary);
             color: white;
         }
 
         .skill-button.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
+            background: var(--haw-primary);
+            border-color: var(--haw-primary);
             color: white;
+            box-shadow: 0 4px 15px rgba(30, 67, 154, 0.4);
         }
 
         /* Section Styles */
@@ -301,37 +398,35 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid var(--border-light);
-            border-radius: 20px;
+            border-radius: 24px;
             padding: 2.5rem;
             margin-bottom: 2rem;
             opacity: 0;
             transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+            animation: slideUp 0.7s ease forwards;
         }
 
-        .section:nth-child(2) { animation-delay: 0.1s; }
-        .section:nth-child(3) { animation-delay: 0.2s; }
-        .section:nth-child(4) { animation-delay: 0.3s; }
-        .section:nth-child(5) { animation-delay: 0.4s; }
+        .section:nth-child(3) { animation-delay: 0.15s; }
+        .section:nth-child(4) { animation-delay: 0.2s; }
+        .section:nth-child(5) { animation-delay: 0.25s; }
+        .section:nth-child(6) { animation-delay: 0.3s; }
 
         .section h2 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: white;
             margin-bottom: 1.5rem;
             font-weight: 600;
             letter-spacing: -0.5px;
-            position: relative;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
         }
 
-        .section h2::after {
+        .section h2::before {
             content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--haw-primary), var(--haw-secondary));
             border-radius: 2px;
         }
 
@@ -341,50 +436,56 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
-        /* Card Styles - Clean with subtle hover */
+        /* Card Styles */
         .highlightable {
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--card-bg);
             border: 1px solid var(--border-light);
-            border-radius: 14px;
+            border-radius: 16px;
             padding: 1.5rem;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .highlightable::before {
+        .highlightable::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
+            background: linear-gradient(135deg, rgba(30, 67, 154, 0.1), transparent);
             opacity: 0;
-            transition: opacity 0.25s ease;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
         }
 
         .highlightable:hover {
-            border-color: rgba(99, 102, 241, 0.4);
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+            border-color: var(--haw-primary);
+            transform: translateY(-6px);
+            box-shadow: 
+                0 20px 40px rgba(30, 67, 154, 0.2),
+                0 0 0 1px rgba(30, 67, 154, 0.1);
         }
 
-        .highlightable:hover::before {
+        .highlightable:hover::after {
             opacity: 1;
         }
 
         .highlightable.highlight {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+            border-color: var(--haw-primary);
+            box-shadow: 
+                0 0 30px rgba(30, 67, 154, 0.3),
+                inset 0 0 20px rgba(30, 67, 154, 0.05);
         }
 
         .highlightable.dimmed {
-            opacity: 0.35;
+            opacity: 0.3;
+            transform: scale(0.98);
         }
 
         .experience-title {
@@ -397,7 +498,7 @@
 
         .experience-details {
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--haw-secondary);
             display: block;
             margin-bottom: 0.8rem;
             font-weight: 500;
@@ -412,19 +513,21 @@
         .experience-list li {
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding: 0.3rem 0;
+            padding: 0.25rem 0;
             padding-left: 1.2rem;
             position: relative;
             line-height: 1.5;
         }
 
         .experience-list li::before {
-            content: '›';
+            content: '';
             position: absolute;
             left: 0;
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 1rem;
+            top: 0.65rem;
+            width: 6px;
+            height: 6px;
+            background: var(--haw-primary);
+            border-radius: 50%;
         }
 
         .experience-list p {
@@ -442,9 +545,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
+            background: rgba(10, 15, 26, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             z-index: 999;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -458,21 +561,23 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.95);
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+            transform: translate(-50%, -50%) scale(0.9);
+            background: linear-gradient(135deg, rgba(10, 15, 26, 0.98), rgba(20, 30, 50, 0.98));
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-light);
             padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 24px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(30, 67, 154, 0.2);
             z-index: 1000;
             max-width: 650px;
             width: 90%;
             max-height: 85vh;
             overflow-y: auto;
             opacity: 0;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .popup-overlay.active .popup-content {
@@ -488,16 +593,19 @@
         }
 
         .popup-content .employment-details {
-            color: var(--text-muted);
+            color: var(--haw-secondary);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
+            font-weight: 500;
         }
 
         .popup-content h2 {
-            font-size: 1.1rem;
-            color: var(--primary-color);
+            font-size: 1rem;
+            color: var(--haw-secondary);
             margin: 1.5rem 0 0.8rem;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .popup-content p {
@@ -528,20 +636,20 @@
 
         .popup-content .skill-title {
             font-weight: 600;
-            color: var(--tertiary-color);
+            color: var(--haw-primary-light);
         }
 
         .close-btn {
             position: absolute;
             top: 1.2rem;
             right: 1.2rem;
-            width: 36px;
-            height: 36px;
-            background: rgba(255, 255, 255, 0.05);
+            width: 40px;
+            height: 40px;
+            background: rgba(30, 67, 154, 0.2);
             border: 1px solid var(--border-light);
             border-radius: 50%;
             color: var(--text-muted);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -550,22 +658,46 @@
         }
 
         .close-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--haw-primary);
             color: white;
+            border-color: var(--haw-primary);
         }
 
         /* Scrollbar Styling */
-        .popup-content::-webkit-scrollbar {
-            width: 6px;
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        .popup-content::-webkit-scrollbar-track {
-            background: transparent;
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
         }
 
-        .popup-content::-webkit-scrollbar-thumb {
-            background: var(--border-light);
-            border-radius: 3px;
+        ::-webkit-scrollbar-thumb {
+            background: var(--haw-primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--haw-primary-light);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-light);
+            margin-top: 2rem;
+        }
+
+        .footer a {
+            color: var(--haw-secondary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: white;
         }
 
         /* Mobile Responsive */
@@ -582,13 +714,20 @@
                 gap: 1.5rem;
             }
 
+            .hero-section::before {
+                width: 100%;
+                height: 4px;
+                top: 0;
+                left: 0;
+            }
+
             .hero-content h1 {
                 font-size: 2rem;
             }
 
             .profile-image {
-                width: 120px;
-                height: 120px;
+                width: 130px;
+                height: 130px;
             }
 
             .contact-info {
@@ -599,12 +738,16 @@
                 display: none;
             }
 
+            .navbar-title {
+                font-size: 0.9rem;
+            }
+
             .skill-filters {
                 padding: 0.8rem;
             }
 
             .skill-button {
-                padding: 0.5rem 0.9rem;
+                padding: 0.45rem 0.9rem;
                 font-size: 0.8rem;
             }
 
@@ -622,14 +765,29 @@
                 width: 95%;
                 padding: 1.5rem;
             }
+
+            .orb-1 { width: 250px; height: 250px; }
+            .orb-2 { width: 200px; height: 200px; }
+            .orb-3 { width: 150px; height: 150px; }
         }
     </style>
 </head>
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="navbar-content">
-            <div class="navbar-brand">Alec Klamroth</div>
+            <div class="navbar-brand">
+                <img src="images/HAW_logo.jpg" alt="HAW Hamburg" class="navbar-logo">
+                <span class="navbar-title">Alec Klamroth</span>
+            </div>
             <ul class="navbar-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#education">Education</a></li>
@@ -716,7 +874,6 @@
                         <li>Hands-on experience through team-based lab projects</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>B.Sc. Information Engineering</h1>
                         <p class="employment-details">Hamburg University of Applied Sciences | Sep 2023 – Present | 6th Semester</p>
@@ -755,7 +912,6 @@
                         <li>Developed critical thinking and research skills</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>International Baccalaureate Diploma</h1>
                         <p class="employment-details">Swiss School Mexico | 2018 – 2020</p>
@@ -808,7 +964,6 @@
                         <li>Database logging implementation</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Software Developer</h1>
                         <p class="employment-details">HAWKS Racing (Formula Student Team) | Sep 2024 – Present | 1 Year</p>
@@ -857,7 +1012,6 @@
                         <li>Team coordination during peak hours</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Bartender</h1>
                         <p class="employment-details">Peter Pane | Feb 2022 – Present | 3+ Years</p>
@@ -898,7 +1052,6 @@
                         <li>Machine maintenance</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Production Worker</h1>
                         <p class="employment-details">JobNext24 GmbH | Oct 2020 – Aug 2021 | 10 Months</p>
@@ -939,7 +1092,6 @@
                         <li>Social counseling</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Volunteer Work</h1>
                         <p class="employment-details">Unidos Cuernavaca | Jul 2017 – Feb 2020 | 3 Years</p>
@@ -990,7 +1142,6 @@
                         <li>Fourier synthesis</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Graphing Tool</h1>
                         <p class="employment-details">Java | University Project</p>
@@ -1032,7 +1183,6 @@
                         <li>Multi-agent coordination</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Vacuum Robot</h1>
                         <p class="employment-details">Java | Distributed Systems Project</p>
@@ -1070,7 +1220,6 @@
                         <li>Real-time game logic</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Pong Console</h1>
                         <p class="employment-details">C | Embedded Systems Project</p>
@@ -1112,7 +1261,6 @@
                         <li>Physics and collision systems</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Odyssey</h1>
                         <p class="employment-details">Java | Game Development Project</p>
@@ -1155,7 +1303,6 @@
                         <li>PYNQ board and Steam Deck</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>PYNQ Integration</h1>
                         <p class="employment-details">Python | FPGA Hardware Acceleration Project</p>
@@ -1180,7 +1327,7 @@
                     data-skill-default="
                         <li>Modern portfolio with glassmorphism design</li>
                         <li>Dynamic skill-based filtering</li>
-                        <li>Responsive and accessible</li>"
+                        <li>HAW Hamburg branded theme</li>"
                     data-skill-programming="
                         <p>HTML5, CSS3, JavaScript with modern web standards.</p>"
                     data-skill-software-tools="
@@ -1191,22 +1338,21 @@
                     <ul class="experience-list">
                         <li>Modern portfolio with glassmorphism design</li>
                         <li>Dynamic skill-based filtering</li>
-                        <li>Responsive and accessible</li>
+                        <li>HAW Hamburg branded theme</li>
                     </ul>
 
-                    <!-- Popup content -->
                     <div class="popup-content" style="display: none;">
                         <h1>Portfolio Website</h1>
                         <p class="employment-details">Personal Project | 2025</p>
                         
                         <h2>Description</h2>
-                        <p>Modern, interactive portfolio website showcasing professional experience and projects with a unique skill-based filtering system and clean glassmorphism design.</p>
+                        <p>Modern, interactive portfolio website showcasing professional experience and projects with a unique skill-based filtering system and HAW Hamburg branded design.</p>
                         
                         <h2>Technical Features</h2>
                         <ul>
                             <li>Glassmorphism UI with backdrop filters</li>
                             <li>Dynamic skill filtering system</li>
-                            <li>Subtle animations and micro-interactions</li>
+                            <li>Animated background with floating orbs</li>
                             <li>Fully responsive design</li>
                             <li>Hosted on GitHub Pages with custom domain</li>
                         </ul>
@@ -1261,6 +1407,11 @@
                 </div>
             </div>
         </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2025 Alec Jens Klamroth | Information Engineering Student at <a href="https://www.haw-hamburg.de" target="_blank">HAW Hamburg</a></p>
+        </footer>
     </div>
 
     <!-- Popup Overlay -->
@@ -1278,16 +1429,12 @@
             button.addEventListener('click', () => {
                 const skill = button.dataset.skill;
                 
-                // Toggle active state
                 if (activeSkill === skill) {
-                    // Deactivate
                     button.classList.remove('active');
                     activeSkill = null;
                     
-                    // Reset all cards
                     highlightables.forEach(card => {
                         card.classList.remove('highlight', 'dimmed');
-                        // Reset to default content
                         const defaultContent = card.dataset.skillDefault;
                         if (defaultContent) {
                             const list = card.querySelector('.experience-list');
@@ -1295,18 +1442,15 @@
                         }
                     });
                 } else {
-                    // Deactivate previous
                     skillButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
                     activeSkill = skill;
                     
-                    // Filter cards
                     highlightables.forEach(card => {
                         if (card.classList.contains(`skill-${skill}`)) {
                             card.classList.add('highlight');
                             card.classList.remove('dimmed');
                             
-                            // Update content to skill-specific
                             const skillContent = card.dataset[`skill${skill.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('')}`];
                             if (skillContent) {
                                 const list = card.querySelector('.experience-list');
@@ -1329,11 +1473,9 @@
             card.addEventListener('click', () => {
                 const popupContent = card.querySelector('.popup-content');
                 if (popupContent) {
-                    // Clone and show popup
                     const clone = popupContent.cloneNode(true);
                     clone.style.display = 'block';
                     
-                    // Clear previous content
                     const existingContent = popupOverlay.querySelector('.popup-content:not(#close-popup)');
                     if (existingContent && existingContent !== closePopupBtn) {
                         existingContent.remove();
@@ -1342,7 +1484,6 @@
                     popupOverlay.appendChild(clone);
                     popupOverlay.style.display = 'block';
                     
-                    // Trigger animation
                     requestAnimationFrame(() => {
                         popupOverlay.classList.add('active');
                     });
@@ -1350,7 +1491,6 @@
             });
         });
 
-        // Close popup
         function closePopup() {
             popupOverlay.classList.remove('active');
             setTimeout(() => {
@@ -1365,28 +1505,21 @@
             if (e.target === popupOverlay) closePopup();
         });
 
-        // Close on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') closePopup();
         });
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll > 50) {
-                navbar.style.background = 'rgba(3, 7, 18, 0.95)';
+            if (window.pageYOffset > 50) {
+                navbar.style.background = 'rgba(10, 15, 26, 0.95)';
             } else {
-                navbar.style.background = 'rgba(3, 7, 18, 0.8)';
+                navbar.style.background = 'rgba(10, 15, 26, 0.85)';
             }
-            
-            lastScroll = currentScroll;
         });
 
-        // Smooth scroll for navigation links
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();

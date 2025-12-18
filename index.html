@@ -1,1446 +1,1404 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Your Name - Information Engineering Student Portfolio</title>
-	<style>
-		:root {
-			--primary-color: #6366f1;
-			--secondary-color: #8b5cf6;
-			--tertiary-color: #ec4899;
-			--accent-color: #06b6d4;
-			--dark-bg: #0f172a;
-			--light-bg: #f8fafc;
-			--glass-bg: rgba(255, 255, 255, 0.1);
-			--text-dark: #1e293b;
-			--text-light: #64748b;
-			--border-light: rgba(255, 255, 255, 0.2);
-			--shadow-color: rgba(99, 102, 241, 0.1);
-			--container-min-height: 180px;
-			--glow-color: #6366f1;
-		}
-
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-			line-height: 1.6;
-			color: var(--text-dark);
-			background: #030712;
-			min-height: 100vh;
-			overflow-x: hidden;
-		}
-
-		/* Animated Background */
-		body::before {
-			content: '';
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background:
-				radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
-				radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-				radial-gradient(circle at 40% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
-				radial-gradient(circle at 80% 10%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
-			z-index: -2;
-			animation: floatingGradient 20s ease infinite;
-		}
-
-		@keyframes floatingGradient {
-
-			0%,
-			100% {
-				transform: translate(0, 0) rotate(0deg);
-			}
-
-			33% {
-				transform: translate(-20px, -20px) rotate(120deg);
-			}
-
-			66% {
-				transform: translate(20px, -10px) rotate(240deg);
-			}
-		}
-
-		/* Mesh gradient overlay */
-		body::after {
-			content: '';
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background:
-				linear-gradient(180deg, transparent 0%, #030712 100%);
-			z-index: -1;
-			pointer-events: none;
-		}
-
-		/* Navigation Bar - Glassmorphism */
-		.navbar {
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
-			background: rgba(15, 23, 42, 0.8);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border-bottom: 1px solid var(--border-light);
-			z-index: 1000;
-			transition: all 0.3s ease;
-		}
-
-		.navbar.scrolled {
-			background: rgba(15, 23, 42, 0.95);
-			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-		}
-
-		.navbar-content {
-			max-width: 1200px;
-			margin: 0 auto;
-			padding: 1.2rem 2rem;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.navbar-brand {
-			font-size: 1.5rem;
-			font-weight: 700;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			-webkit-background-clip: text;
-			background-clip: text;
-			color: transparent;
-			letter-spacing: -0.5px;
-		}
-
-		.navbar-links {
-			display: flex;
-			gap: 2.5rem;
-			list-style: none;
-		}
-
-		.navbar-links a {
-			text-decoration: none;
-			color: #cbd5e1;
-			font-weight: 500;
-			transition: all 0.3s ease;
-			position: relative;
-			font-size: 0.95rem;
-			letter-spacing: 0.5px;
-		}
-
-		.navbar-links a::after {
-			content: '';
-			position: absolute;
-			bottom: -8px;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 0;
-			height: 2px;
-			background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-			transition: width 0.3s ease;
-			border-radius: 2px;
-		}
-
-		.navbar-links a:hover {
-			color: white;
-		}
-
-		.navbar-links a:hover::after {
-			width: 100%;
-		}
-
-		/* Container */
-		.container {
-			max-width: 1200px;
-			margin: 100px auto 2rem;
-			padding: 0 2rem;
-			position: relative;
-		}
-
-		/* Hero Section - Modern Glass */
-		.hero-section {
-			background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border: 1px solid var(--border-light);
-			border-radius: 24px;
-			padding: 3.5rem;
-			margin-bottom: 3rem;
-			box-shadow:
-				0 20px 40px rgba(0, 0, 0, 0.2),
-				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-			display: flex;
-			align-items: center;
-			gap: 4rem;
-			position: relative;
-			overflow: hidden;
-			animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-		}
-
-		@keyframes slideUp {
-			from {
-				opacity: 0;
-				transform: translateY(60px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		/* Animated corner accent */
-		.hero-section::before {
-			content: '';
-			position: absolute;
-			top: -50%;
-			right: -25%;
-			width: 50%;
-			height: 200%;
-			background: linear-gradient(45deg, transparent, var(--primary-color), transparent);
-			opacity: 0.1;
-			animation: sweep 8s linear infinite;
-		}
-
-		@keyframes sweep {
-			from {
-				transform: rotate(0deg);
-			}
-
-			to {
-				transform: rotate(360deg);
-			}
-		}
-
-		.profile-image {
-			width: 180px;
-			height: 180px;
-			border-radius: 20px;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: white;
-			font-size: 3.5rem;
-			font-weight: 700;
-			flex-shrink: 0;
-			box-shadow:
-				0 20px 40px rgba(99, 102, 241, 0.3),
-				inset 0 1px 0 rgba(255, 255, 255, 0.3);
-			position: relative;
-			overflow: hidden;
-			transform: rotate(3deg);
-			transition: transform 0.3s ease;
-		}
-
-		.profile-image:hover {
-			transform: rotate(0deg) scale(1.05);
-		}
-
-		.profile-image::before {
-			content: '';
-			position: absolute;
-			top: -50%;
-			left: -50%;
-			width: 200%;
-			height: 200%;
-			background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-			animation: shimmer 2.5s infinite;
-		}
-
-		@keyframes shimmer {
-			0% {
-				transform: translateX(-100%) translateY(-100%) rotate(45deg);
-			}
-
-			100% {
-				transform: translateX(100%) translateY(100%) rotate(45deg);
-			}
-		}
-
-		.hero-content h1 {
-			font-size: 3rem;
-			margin-bottom: 0.5rem;
-			color: white;
-			font-weight: 800;
-			letter-spacing: -1px;
-			line-height: 1.1;
-		}
-
-		.hero-content .subtitle {
-			font-size: 1.3rem;
-			background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-			-webkit-background-clip: text;
-			background-clip: text;
-			color: transparent;
-			margin-bottom: 1.2rem;
-			font-weight: 600;
-		}
-
-		.hero-content p {
-			color: #cbd5e1;
-			line-height: 1.8;
-			margin-bottom: 2rem;
-			font-size: 1.05rem;
-		}
-
-		.contact-info {
-			display: flex;
-			gap: 1rem;
-			flex-wrap: wrap;
-		}
-
-		.contact-item {
-			display: flex;
-			align-items: center;
-			gap: 0.5rem;
-			padding: 0.6rem 1.2rem;
-			background: rgba(255, 255, 255, 0.05);
-			border: 1px solid var(--border-light);
-			border-radius: 100px;
-			transition: all 0.3s ease;
-			backdrop-filter: blur(10px);
-			font-size: 0.9rem;
-			color: #cbd5e1;
-		}
-
-		.contact-item:hover {
-			transform: translateY(-3px);
-			background: rgba(255, 255, 255, 0.1);
-			box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-			border-color: var(--primary-color);
-		}
-
-		.contact-item a {
-			color: #cbd5e1;
-			text-decoration: none;
-			transition: color 0.3s ease;
-		}
-
-		.contact-item:hover a {
-			color: white;
-		}
-
-		/* Skill Prompt - Minimal */
-		.skill-prompt-container {
-			text-align: center;
-			margin: 3rem 0 2rem;
-			opacity: 1;
-			transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-		}
-
-		.skill-prompt-container.hidden {
-			opacity: 0;
-			margin: 0;
-			height: 0;
-			overflow: hidden;
-		}
-
-		#skill-prompt-text {
-			color: #cbd5e1;
-			font-size: 0.9rem;
-			font-weight: 500;
-			letter-spacing: 2px;
-			text-transform: uppercase;
-			opacity: 0.7;
-			display: inline-block;
-			position: relative;
-		}
-
-		#skill-prompt-text::after {
-			content: '';
-			position: absolute;
-			bottom: -5px;
-			left: 0;
-			width: 100%;
-			height: 1px;
-			background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-			animation: scan 2s linear infinite;
-		}
-
-		@keyframes scan {
-			0% {
-				transform: translateX(-100%);
-			}
-
-			100% {
-				transform: translateX(100%);
-			}
-		}
-
-		/* Skill Filters - Modern Pills */
-		.skill-filters-wrapper {
-			margin-bottom: 3rem;
-			min-height: 70px;
-		}
-
-		.skill-filters {
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 0.8rem;
-			padding: 1.2rem;
-			background: rgba(15, 23, 42, 0.6);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 1px solid var(--border-light);
-			border-radius: 20px;
-			transition: all 0.3s ease;
-			max-width: fit-content;
-			margin: 0 auto;
-		}
-
-		.skill-filters.fixed {
-			position: fixed;
-			top: 70px;
-			left: 50%;
-			transform: translateX(-50%);
-			z-index: 100;
-			box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-			animation: slideDown 0.3s ease;
-		}
-
-		@keyframes slideDown {
-			from {
-				opacity: 0;
-				transform: translateX(-50%) translateY(-20px);
-			}
-
-			to {
-				opacity: 1;
-				transform: translateX(-50%) translateY(0);
-			}
-		}
-
-		.skill-button {
-			padding: 0.6rem 1.4rem;
-			background: rgba(255, 255, 255, 0.05);
-			color: #cbd5e1;
-			border: 1px solid var(--border-light);
-			border-radius: 100px;
-			cursor: pointer;
-			font-weight: 500;
-			font-size: 0.9rem;
-			transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-			outline: none;
-			position: relative;
-			overflow: hidden;
-			backdrop-filter: blur(10px);
-			letter-spacing: 0.5px;
-		}
-
-		.skill-button::before {
-			content: '';
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 100%;
-			height: 100%;
-			background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-			transform: translate(-50%, -50%) scale(0);
-			transition: transform 0.5s ease;
-			border-radius: 50%;
-		}
-
-		.skill-button:hover {
-			transform: translateY(-2px);
-			color: white;
-			border-color: rgba(99, 102, 241, 0.5);
-			box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
-		}
-
-		.skill-button:hover::before {
-			transform: translate(-50%, -50%) scale(2);
-		}
-
-		.skill-button.active {
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			color: white;
-			border-color: transparent;
-			box-shadow:
-				0 0 30px rgba(99, 102, 241, 0.4),
-				inset 0 1px 0 rgba(255, 255, 255, 0.2);
-			transform: scale(1.05);
-		}
-
-		/* Section - Glass Cards */
-		.section {
-			background: rgba(15, 23, 42, 0.6);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 1px solid var(--border-light);
-			border-radius: 24px;
-			padding: 3rem;
-			margin-bottom: 3rem;
-			box-shadow:
-				0 20px 40px rgba(0, 0, 0, 0.2),
-				inset 0 1px 0 rgba(255, 255, 255, 0.05);
-			position: relative;
-			overflow: hidden;
-		}
-
-		.section::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			height: 1px;
-			background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-			animation: scan 4s linear infinite;
-		}
-
-		.section h2 {
-			color: white;
-			margin-bottom: 2.5rem;
-			font-size: 2rem;
-			font-weight: 700;
-			letter-spacing: -0.5px;
-			display: flex;
-			align-items: center;
-			gap: 1rem;
-		}
-
-		.section h2::before {
-			content: '';
-			width: 40px;
-			height: 3px;
-			background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-			border-radius: 3px;
-		}
-
-		/* Grid Layout */
-		.experience-grid,
-		.education-grid,
-		.projects-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-			gap: 1.5rem;
-		}
-
-		/* Highlightable Cards - Neumorphism meets Glass */
-		.highlightable {
-			background: rgba(30, 41, 59, 0.5);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			border-radius: 16px;
-			padding: 1.5rem;
-			min-height: var(--container-min-height);
-			transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-			cursor: pointer;
-			position: relative;
-			overflow: hidden;
-		}
-
-		.highlightable::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-					rgba(99, 102, 241, 0.15) 0%,
-					transparent 50%);
-			opacity: 0;
-			transition: opacity 0.3s ease;
-			pointer-events: none;
-		}
-
-		.highlightable:hover {
-			transform: translateY(-5px) scale(1.02);
-			border-color: rgba(99, 102, 241, 0.3);
-			box-shadow:
-				0 20px 40px rgba(99, 102, 241, 0.2),
-				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-		}
-
-		.highlightable:hover::before {
-			opacity: 1;
-		}
-
-		.highlightable.highlight {
-			border-color: rgba(99, 102, 241, 0.5);
-			background: rgba(99, 102, 241, 0.1);
-			box-shadow:
-				0 0 40px rgba(99, 102, 241, 0.3),
-				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-		}
-
-		.experience-title {
-			font-weight: 700;
-			font-size: 1.1rem;
-			color: white;
-			margin-bottom: 0.3rem;
-			display: block;
-			letter-spacing: -0.3px;
-		}
-
-		.experience-details {
-			font-size: 0.85rem;
-			color: #94a3b8;
-			display: block;
-			margin-bottom: 1rem;
-			font-weight: 500;
-			letter-spacing: 0.3px;
-		}
-
-		.experience-list {
-			padding: 0;
-			margin: 0;
-			list-style: none;
-		}
-
-		.experience-list li {
-			font-size: 0.9rem;
-			color: #cbd5e1;
-			padding: 0.4rem 0;
-			padding-left: 1.5rem;
-			position: relative;
-			line-height: 1.6;
-		}
-
-		.experience-list li::before {
-			content: '→';
-			position: absolute;
-			left: 0;
-			color: var(--primary-color);
-			font-weight: 600;
-		}
-
-		.experience-list p {
-			font-size: 0.9rem;
-			color: #cbd5e1;
-			margin: 0.5rem 0;
-			line-height: 1.6;
-		}
-
-		/* Popup Modal - Ultra Modern */
-		.popup-overlay {
-			display: none;
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0, 0, 0, 0.8);
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			z-index: 999;
-			animation: fadeIn 0.3s ease;
-		}
-
-		@keyframes fadeIn {
-			from {
-				opacity: 0;
-			}
-
-			to {
-				opacity: 1;
-			}
-		}
-
-		.popup-content {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.98) 100%);
-			backdrop-filter: blur(20px);
-			-webkit-backdrop-filter: blur(20px);
-			border: 1px solid var(--border-light);
-			padding: 2.5rem;
-			border-radius: 24px;
-			box-shadow:
-				0 25px 50px rgba(0, 0, 0, 0.5),
-				inset 0 1px 0 rgba(255, 255, 255, 0.1);
-			z-index: 1000;
-			max-width: 700px;
-			width: 90%;
-			max-height: 85vh;
-			overflow-y: auto;
-			animation: popIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-		}
-
-		@keyframes popIn {
-			from {
-				opacity: 0;
-				transform: translate(-50%, -45%) scale(0.9);
-			}
-
-			to {
-				opacity: 1;
-				transform: translate(-50%, -50%) scale(1);
-			}
-		}
-
-		/* Custom Scrollbar for Popup */
-		.popup-content::-webkit-scrollbar {
-			width: 8px;
-		}
-
-		.popup-content::-webkit-scrollbar-track {
-			background: rgba(255, 255, 255, 0.05);
-			border-radius: 8px;
-		}
-
-		.popup-content::-webkit-scrollbar-thumb {
-			background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-			border-radius: 8px;
-		}
-
-		.close-button {
-			position: absolute;
-			top: 1.5rem;
-			right: 1.5rem;
-			background: rgba(255, 255, 255, 0.1);
-			border: 1px solid var(--border-light);
-			width: 36px;
-			height: 36px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 20px;
-			cursor: pointer;
-			color: #94a3b8;
-			transition: all 0.3s ease;
-		}
-
-		.close-button:hover {
-			background: rgba(239, 68, 68, 0.2);
-			border-color: rgba(239, 68, 68, 0.5);
-			color: #ef4444;
-			transform: rotate(90deg);
-		}
-
-		.popup-content h1 {
-			font-size: 2.5rem;
-			margin: 0 0 0.5rem;
-			color: white;
-			font-weight: 800;
-			letter-spacing: -1px;
-			background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-			-webkit-background-clip: text;
-			background-clip: text;
-			color: transparent;
-		}
-
-		.popup-content .employment-details {
-			font-size: 1rem;
-			color: #94a3b8;
-			margin: 0 0 2rem;
-			font-weight: 500;
-		}
-
-		.popup-content h2 {
-			font-size: 1.3rem;
-			color: white;
-			margin: 2rem 0 1rem;
-			font-weight: 700;
-			padding-bottom: 0.5rem;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		}
-
-		.popup-content p {
-			font-size: 0.95rem;
-			color: #cbd5e1;
-			margin: 1rem 0;
-			line-height: 1.8;
-		}
-
-		.popup-content ul {
-			padding-left: 1.5rem;
-			margin: 1rem 0;
-		}
-
-		.popup-content ul li {
-			font-size: 0.95rem;
-			color: #cbd5e1;
-			margin-bottom: 0.8rem;
-			line-height: 1.6;
-		}
-
-		/* Mobile Responsive */
-		@media (max-width: 768px) {
-			.hero-section {
-				flex-direction: column;
-				text-align: center;
-				padding: 2rem;
-			}
-
-			.hero-content h1 {
-				font-size: 2rem;
-			}
-
-			.profile-image {
-				width: 140px;
-				height: 140px;
-			}
-
-			.navbar-links {
-				display: none;
-			}
-
-			.skill-filters {
-				padding: 0.8rem;
-			}
-
-			.skill-button {
-				padding: 0.5rem 1rem;
-				font-size: 0.85rem;
-			}
-
-			.experience-grid,
-			.education-grid,
-			.projects-grid {
-				grid-template-columns: 1fr;
-			}
-
-			.section {
-				padding: 2rem;
-			}
-
-			.popup-content {
-				width: 95%;
-				padding: 1.5rem;
-			}
-		}
-
-		/* Loading Animation */
-		@keyframes float {
-
-			0%,
-			100% {
-				transform: translateY(0);
-			}
-
-			50% {
-				transform: translateY(-10px);
-			}
-		}
-
-		.highlightable {
-			animation: float 6s ease-in-out infinite;
-			animation-delay: calc(var(--i) * 0.1s);
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Alec Jens Klamroth - Software Developer | Information Engineering Student Portfolio">
+    <meta name="author" content="Alec Jens Klamroth">
+    <title>Alec Klamroth - Software Developer Portfolio</title>
+    <style>
+        /* Root Variables */
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #8b5cf6;
+            --tertiary-color: #a78bfa;
+            --accent-color: #06b6d4;
+            --dark-bg: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-light: rgba(255, 255, 255, 0.1);
+            --shadow-color: rgba(99, 102, 241, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background: #030712;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Animated Background - Slow moving gradients */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 60%);
+            z-index: -2;
+            animation: subtleShift 30s ease-in-out infinite;
+        }
+
+        @keyframes subtleShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        /* Fine grain noise overlay for texture */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 5rem;
+        }
+
+        /* Navigation - Clean and Minimal */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(3, 7, 18, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .navbar-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.2s ease;
+        }
+
+        .navbar-links a:hover {
+            color: white;
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.3rem;
+            color: white;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.15rem;
+            background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .contact-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Skill Filter Section */
+        .skill-prompt-container {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        #skill-prompt-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .skill-filters-wrapper {
+            margin-bottom: 2.5rem;
+        }
+
+        .skill-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .skill-button {
+            padding: 0.6rem 1.2rem;
+            background: transparent;
+            border: 1px solid var(--border-light);
+            border-radius: 100px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .skill-button:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        .skill-button.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Section Styles */
+        .section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border-light);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+        .section:nth-child(5) { animation-delay: 0.4s; }
+
+        .section h2 {
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        /* Grid Layouts */
+        .experience-grid,
+        .education-grid,
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        /* Card Styles - Clean with subtle hover */
+        .highlightable {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-light);
+            border-radius: 14px;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlightable::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .highlightable:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+        }
+
+        .highlightable:hover::before {
+            opacity: 1;
+        }
+
+        .highlightable.highlight {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .highlightable.dimmed {
+            opacity: 0.35;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: white;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .experience-details {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .experience-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .experience-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .experience-list li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .experience-list p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0.4rem 0;
+            line-height: 1.5;
+        }
+
+        /* Popup Modal */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+        }
+
+        .popup-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.95);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(30, 41, 59, 0.98));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            max-width: 650px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active .popup-content {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup-content h1 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .popup-content .employment-details {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .popup-content h2 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin: 1.5rem 0 0.8rem;
+            font-weight: 600;
+        }
+
+        .popup-content p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+
+        .popup-content ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .popup-content ul li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .popup-content .skills-list {
+            margin-top: 1rem;
+        }
+
+        .popup-content .skill-item {
+            margin-bottom: 0.8rem;
+        }
+
+        .popup-content .skill-title {
+            font-weight: 600;
+            color: var(--tertiary-color);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* Scrollbar Styling */
+        .popup-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .popup-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .popup-content::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 3px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                padding-top: 4.5rem;
+            }
+
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .skill-filters {
+                padding: 0.8rem;
+            }
+
+            .skill-button {
+                padding: 0.5rem 0.9rem;
+                font-size: 0.8rem;
+            }
+
+            .experience-grid,
+            .education-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 1.5rem;
+            }
+
+            .popup-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-	<!-- Navigation -->
-	<nav class="navbar" id="navbar">
-		<div class="navbar-content">
-			<div class="navbar-brand">Alec Klamroth Portfolio</div>
-			<ul class="navbar-links">
-				<li><a href="#home">Home</a></li>
-				<li><a href="#education">Education</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#skills">Skills</a></li>
-			</ul>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-content">
+            <div class="navbar-brand">Alec Klamroth</div>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
 
-	<!-- Container -->
-	<div class="container">
-		<!-- Hero Section -->
-		<section id="home" class="hero-section">
-			<div class="profile-image">YN</div>
-			<div class="hero-content">
-				<h1>Alec Klamroth</h1>
-				<p class="subtitle">Information Engineering Student</p>
-				<p>Information Engineering student at HAW Hamburg, specializing in software development, embedded
-					systems, and IoT solutions. Currently developing advanced GUI applications for Formula Student using
-					MVC architecture.</p>
-				<div class="contact-info">
-					<div class="contact-item">
-						📧 <a href="alec.klamroth@gmail.com">alec.klamroth@gmail.com</a>
-					</div>
-					<div class="contact-item">
-						📱 +49 177 749 3858
-					</div>
-					<div class="contact-item">
-						📍 Hamburg, Germany
-					</div>
-					<div class="contact-item">
-						💼 <a href="https://linkedin.com/in/alecklamroth" target="_blank">LinkedIn</a>
-					</div>
-					<div class="contact-item">
-						👨‍💻 <a href="https://github.com/Fokoscrispis" target="_blank">GitHub</a>
-					</div>
-				</div>
-			</div>
-		</section>
+    <!-- Container -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="profile-image">
+                <img src="images/profile_image.jpg" alt="Alec Klamroth">
+            </div>
+            <div class="hero-content">
+                <h1>Alec Jens Klamroth</h1>
+                <p class="subtitle">Software Developer</p>
+                <p>Information Engineering student at HAW Hamburg, currently in my 6th semester. Specializing in software development with focus on embedded systems, real-time applications, and MVC architecture. Currently developing advanced GUI applications for Formula Student at HAWKS Racing.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        📧 <a href="mailto:alec.klamroth@gmail.com">alec.klamroth@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        📱 +49 177 749 3858
+                    </div>
+                    <div class="contact-item">
+                        📍 Hamburg, Germany
+                    </div>
+                    <div class="contact-item">
+                        👨‍💻 <a href="https://github.com/Fokocrispis" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-		<!-- Skill Prompt -->
-		<div class="skill-prompt-container">
-			<span id="skill-prompt-text">Filter by skills</span>
-		</div>
+        <!-- Skill Prompt -->
+        <div class="skill-prompt-container">
+            <span id="skill-prompt-text">Filter by skills</span>
+        </div>
 
-		<!-- Skill Filters -->
-		<div class="skill-filters-wrapper">
-			<div class="skill-filters">
-				<button class="skill-button" data-skill="programming">Programming</button>
-				<button class="skill-button" data-skill="software-tools">Software Tools</button>
-				<button class="skill-button" data-skill="hardware">Hardware</button>
-				<button class="skill-button" data-skill="teamwork">Teamwork</button>
-				<button class="skill-button" data-skill="problem-solving">Problem Solving</button>
-				<button class="skill-button" data-skill="self-directed-learning">Self-Learning</button>
-				<button class="skill-button" data-skill="troubleshooting">Troubleshooting</button>
-				<button class="skill-button" data-skill="communication">Communication</button>
-			</div>
-		</div>
+        <!-- Skill Filters -->
+        <div class="skill-filters-wrapper">
+            <div class="skill-filters">
+                <button class="skill-button" data-skill="programming">Programming</button>
+                <button class="skill-button" data-skill="software-tools">Software Tools</button>
+                <button class="skill-button" data-skill="hardware">Hardware</button>
+                <button class="skill-button" data-skill="teamwork">Teamwork</button>
+                <button class="skill-button" data-skill="problem-solving">Problem Solving</button>
+                <button class="skill-button" data-skill="communication">Communication</button>
+            </div>
+        </div>
 
-		<!-- Education Section -->
-		<section id="education" class="section">
-			<h2>Education</h2>
-			<div class="education-grid">
-				<div class="highlightable education 
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="highlightable education 
                     skill-programming
                     skill-teamwork
-                    skill-troubleshooting
                     skill-software-tools
-                    skill-hardware" style="--i: 1;" data-experience="haw-hamburg" data-skill-default="
+                    skill-hardware"
+                    data-experience="haw-hamburg"
+                    data-skill-default="
+                        <li>Combined computer science, electrical engineering, and IT program</li>
+                        <li>Strong foundation in software and hardware development</li>
+                        <li>Hands-on experience through team-based lab projects</li>"
+                    data-skill-programming="
+                        <p>Proficiency in C, Java, and Python with object-oriented principles and algorithmic problem-solving.</p>"
+                    data-skill-teamwork="
+                        <p>Collaborative lab environments tackling real-world technical challenges with peers.</p>"
+                    data-skill-software-tools="
+                        <p>Used Git for version control, MatLab for numerical modelling, LTSpice for circuit analysis, and VHDL simulations.</p>"
+                    data-skill-hardware="
+                        <p>Designed, built, and tested circuits, applying electrical engineering principles to practical applications.</p>">
+                    
+                    <strong class="experience-title">B.Sc. Information Engineering</strong>
+                    <em class="experience-details">HAW Hamburg | 2023 – Present | 6th Semester</em>
+                    <ul class="experience-list">
                         <li>Combined computer science, electrical engineering, and IT program</li>
                         <li>Strong foundation in software and hardware development</li>
                         <li>Hands-on experience through team-based lab projects</li>
-                        <li>Current GPA: 1.7/5.0</li>" data-skill-programming="
-                        <li>Proficiency in C, Java, and Python</li>
-                        <li>Object-oriented programming and design patterns</li>
-                        <li>Algorithm design and data structures</li>" data-skill-teamwork="
-                        <li>Collaborated in diverse lab teams</li>
-                        <li>Peer programming and code reviews</li>
-                        <li>Group project management</li>" data-skill-troubleshooting="
-                        <li>Debugging complex software systems</li>
-                        <li>Hardware fault diagnosis</li>
-                        <li>System integration problem-solving</li>" data-skill-software-tools="
-                        <li>IDEs: IntelliJ IDEA, VS Code, Eclipse</li>
-                        <li>Version control with Git</li>
-                        <li>MATLAB and Simulink for simulations</li>" data-skill-hardware="
-                        <li>Microcontroller programming</li>
-                        <li>Circuit design and analysis</li>
-                        <li>Embedded systems development</li>">
+                    </ul>
 
-					<strong class="experience-title">B.Sc. Information Engineering</strong>
-					<em class="experience-details">HAW Hamburg | 2022 – Present</em>
-					<ul class="experience-list">
-						<li>Combined computer science, electrical engineering, and IT program</li>
-						<li>Strong foundation in software and hardware development</li>
-						<li>Hands-on experience through team-based lab projects</li>
-						<li>Current GPA: X.X/5.0</li>
-					</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>B.Sc. Information Engineering</h1>
+                        <p class="employment-details">Hamburg University of Applied Sciences | Sep 2023 – Present | 6th Semester</p>
+                        
+                        <h2>Description</h2>
+                        <p>Pursuing a Bachelor's degree in Information Engineering at HAW Hamburg, encompassing computer science, electronics, and information technology. The program balances theoretical knowledge with practical application across diverse tech-related fields.</p>
+                        
+                        <h2>Skills Gained</h2>
+                        <div class="skills-list">
+                            <p class="skill-item"><span class="skill-title">Programming</span>: Proficiency in C, Java, and Python with object-oriented principles and algorithmic problem-solving.</p>
+                            <p class="skill-item"><span class="skill-title">Teamwork</span>: Collaborative lab environments tackling real-world technical challenges.</p>
+                            <p class="skill-item"><span class="skill-title">Software Tools</span>: Git for version control, MatLab, LTSpice, and VHDL simulations.</p>
+                            <p class="skill-item"><span class="skill-title">Hardware</span>: Circuit design, testing, and electrical engineering applications.</p>
+                        </div>
+                    </div>
+                </div>
 
-					<!-- Popup content -->
-					<div class="popup-content" style="display: none;">
-						<h1>B.Sc. Information Engineering</h1>
-						<p class="employment-details">HAW Hamburg | Sep 2022 – Expected Jul 2026</p>
+                <div class="highlightable education 
+                    skill-communication
+                    skill-teamwork"
+                    data-experience="ib-diploma"
+                    data-skill-default="
+                        <li>Rigorous international curriculum with global perspective</li>
+                        <li>Strong foundation in sciences and mathematics</li>
+                        <li>Developed critical thinking and research skills</li>"
+                    data-skill-communication="
+                        <p>Multilingual education developing fluency in Spanish, German, and English.</p>"
+                    data-skill-teamwork="
+                        <p>Collaborative projects and group presentations across diverse subjects.</p>">
+                    
+                    <strong class="experience-title">International Baccalaureate Diploma</strong>
+                    <em class="experience-details">Swiss School Mexico | 2018 – 2020</em>
+                    <ul class="experience-list">
+                        <li>Rigorous international curriculum with global perspective</li>
+                        <li>Strong foundation in sciences and mathematics</li>
+                        <li>Developed critical thinking and research skills</li>
+                    </ul>
 
-						<h2>Program Overview</h2>
-						<p>The Information Engineering program at HAW Hamburg uniquely combines computer science,
-							electrical engineering, and information technology, providing comprehensive education in
-							modern engineering disciplines.</p>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>International Baccalaureate Diploma</h1>
+                        <p class="employment-details">Swiss School Mexico | 2018 – 2020</p>
+                        
+                        <h2>Description</h2>
+                        <p>Completed the International Baccalaureate Diploma Programme, a rigorous two-year educational program recognized worldwide for its academic excellence and development of well-rounded, internationally-minded students.</p>
+                        
+                        <h2>Skills Gained</h2>
+                        <div class="skills-list">
+                            <p class="skill-item"><span class="skill-title">Communication</span>: Multilingual education developing fluency in Spanish, German, and English.</p>
+                            <p class="skill-item"><span class="skill-title">Critical Thinking</span>: Theory of Knowledge course developing analytical and philosophical reasoning.</p>
+                            <p class="skill-item"><span class="skill-title">Research</span>: Extended Essay developing independent research and academic writing skills.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-						<h2>Key Coursework</h2>
-						<ul>
-							<li>Object-Oriented Programming (Java, C++)</li>
-							<li>Data Structures and Algorithms</li>
-							<li>Digital Systems and Microprocessors</li>
-							<li>Signal Processing and Communications</li>
-							<li>Database Systems</li>
-							<li>Software Engineering</li>
-							<li>Embedded Systems</li>
-							<li>Control Systems</li>
-						</ul>
-
-						<h2>Skills Gained</h2>
-						<p>• <strong>Programming:</strong> Mastered multiple programming paradigms and languages</p>
-						<p>• <strong>Systems Design:</strong> Developed complex software and hardware integrated
-							solutions</p>
-						<p>• <strong>Problem Solving:</strong> Applied analytical thinking to engineering challenges</p>
-						<p>• <strong>Research:</strong> Conducted independent research projects in IoT and embedded
-							systems</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Experience Section -->
-		<section id="experience" class="section">
-			<h2>Work Experience</h2>
-			<div class="experience-grid">
-				<div class="highlightable work-experience 
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Work Experience</h2>
+            <div class="experience-grid">
+                <div class="highlightable work-experience 
                     skill-programming
+                    skill-software-tools
+                    skill-hardware
                     skill-teamwork
-                    skill-software-tools
-                    skill-troubleshooting
-                    skill-problem-solving" style="--i: 2;" data-experience="formula-student" data-skill-default="
-                        <li>Developing GUI application for race car telemetry using MVC</li>
-                        <li>Real-time data visualization for sensor readings</li>
-                        <li>Collaborating with hardware team for system integration</li>" data-skill-programming="
-                        <li>JavaFX GUI development with MVC architecture</li>
-                        <li>Multithreaded programming for real-time data</li>
-                        <li>CAN bus protocol implementation</li>" data-skill-teamwork="
-                        <li>Cross-functional collaboration with 60+ members</li>
-                        <li>Regular sprint planning and reviews</li>
-                        <li>Mentoring junior developers</li>" data-skill-software-tools="
-                        <li>Git for version control</li>
-                        <li>JIRA for project management</li>
-                        <li>Jenkins for CI/CD automation</li>" data-skill-troubleshooting="
-                        <li>Resolved CAN bus timing issues</li>
-                        <li>Optimized data processing latency</li>
-                        <li>Debugged race-condition bugs</li>" data-skill-problem-solving="
-                        <li>Designed efficient data structures</li>
-                        <li>Implemented sensor fusion algorithms</li>
-                        <li>Created modular plugin system</li>">
+                    skill-problem-solving"
+                    data-experience="hawks-racing"
+                    data-skill-default="
+                        <li>Python-based dashboard with MVC architecture</li>
+                        <li>CAN bus communication for vehicle systems</li>
+                        <li>Database logging implementation</li>"
+                    data-skill-programming="
+                        <p>Developed complete Python application with MVC architecture for real-time data visualization.</p>"
+                    data-skill-software-tools="
+                        <p>Utilized Git, Docker, and modern development tools for collaborative software development.</p>"
+                    data-skill-hardware="
+                        <p>Implemented CAN bus communication protocols between display systems and vehicle ECUs.</p>"
+                    data-skill-teamwork="
+                        <p>Collaborated with mechanical and electrical teams to integrate software with vehicle systems.</p>"
+                    data-skill-problem-solving="
+                        <p>Diagnosed and resolved real-time communication issues in embedded automotive systems.</p>">
+                    
+                    <strong class="experience-title">Software Developer</strong>
+                    <em class="experience-details">HAWKS Racing | Sep 2024 – Present</em>
+                    <ul class="experience-list">
+                        <li>Python-based dashboard with MVC architecture</li>
+                        <li>CAN bus communication for vehicle systems</li>
+                        <li>Database logging implementation</li>
+                    </ul>
 
-					<strong class="experience-title">Software Developer - Formula Student</strong>
-					<em class="experience-details">Hawks Racing Hamburg | 2024 – Present</em>
-					<ul class="experience-list">
-						<li>Developing GUI application for race car telemetry using MVC</li>
-						<li>Real-time data visualization for sensor readings</li>
-						<li>Collaborating with hardware team for system integration</li>
-					</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Software Developer</h1>
+                        <p class="employment-details">HAWKS Racing (Formula Student Team) | Sep 2024 – Present | 1 Year</p>
+                        
+                        <h2>Description</h2>
+                        <p>Developing software solutions for HAWKS Racing, HAW Hamburg's Formula Student team. Responsible for creating a comprehensive dashboard application for real-time vehicle monitoring and data analysis.</p>
+                        
+                        <h2>Responsibilities</h2>
+                        <ul>
+                            <li>Development of a Python-based dashboard application with MVC architecture for real-time visualization of vehicle data</li>
+                            <li>Implementation of CAN bus communication between display and vehicle systems</li>
+                            <li>Design and implementation of database logging for telemetry data</li>
+                            <li>Integration of sensor data for performance analysis</li>
+                        </ul>
 
-					<!-- Popup content -->
-					<div class="popup-content" style="display: none;">
-						<h1>Software Developer - Formula Student</h1>
-						<p class="employment-details">Hawks Racing Hamburg | Sep 2023 – Present</p>
+                        <h2>Skills Gained</h2>
+                        <div class="skills-list">
+                            <p class="skill-item"><span class="skill-title">Programming</span>: Advanced Python development with focus on real-time systems.</p>
+                            <p class="skill-item"><span class="skill-title">Hardware</span>: CAN bus protocol implementation and embedded systems integration.</p>
+                            <p class="skill-item"><span class="skill-title">Teamwork</span>: Cross-functional collaboration with mechanical and electrical teams.</p>
+                        </div>
+                    </div>
+                </div>
 
-						<h2>Description</h2>
-						<p>Leading the development of a comprehensive telemetry and control system for our Formula
-							Student electric race car. The system provides real-time monitoring, data logging, and
-							analysis capabilities critical for race performance and vehicle safety.</p>
+                <div class="highlightable work-experience 
+                    skill-communication
+                    skill-teamwork
+                    skill-problem-solving"
+                    data-experience="peter-pane"
+                    data-skill-default="
+                        <li>Customer service and beverage preparation</li>
+                        <li>Fast-paced hospitality environment</li>
+                        <li>Team coordination during peak hours</li>"
+                    data-skill-communication="
+                        <p>Direct customer interaction, handling orders and ensuring guest satisfaction.</p>"
+                    data-skill-teamwork="
+                        <p>Coordinated with kitchen and service staff for smooth operations.</p>"
+                    data-skill-problem-solving="
+                        <p>Quick resolution of customer concerns and operational challenges.</p>">
+                    
+                    <strong class="experience-title">Bartender</strong>
+                    <em class="experience-details">Peter Pane | Feb 2022 – Present</em>
+                    <ul class="experience-list">
+                        <li>Customer service and beverage preparation</li>
+                        <li>Fast-paced hospitality environment</li>
+                        <li>Team coordination during peak hours</li>
+                    </ul>
 
-						<h2>Key Responsibilities</h2>
-						<ul>
-							<li>Architecting GUI application using Model-View-Controller (MVC) pattern</li>
-							<li>Implementing real-time data visualization for 50+ sensor channels</li>
-							<li>Developing CAN bus communication protocols for ECU integration</li>
-							<li>Creating data logging system capable of 100Hz sampling rates</li>
-							<li>Collaborating with mechanical and electrical teams for system requirements</li>
-						</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Bartender</h1>
+                        <p class="employment-details">Peter Pane | Feb 2022 – Present | 3+ Years</p>
+                        
+                        <h2>Description</h2>
+                        <p>Working as a bartender in a busy restaurant environment, responsible for beverage preparation, customer service, and maintaining efficient bar operations during high-volume service periods.</p>
+                        
+                        <h2>Skills Gained</h2>
+                        <div class="skills-list">
+                            <p class="skill-item"><span class="skill-title">Communication</span>: Direct customer interaction and professional service delivery.</p>
+                            <p class="skill-item"><span class="skill-title">Teamwork</span>: Coordination with kitchen and service staff.</p>
+                            <p class="skill-item"><span class="skill-title">Problem Solving</span>: Quick resolution of operational challenges.</p>
+                        </div>
+                    </div>
+                </div>
 
-						<h2>Skills Gained</h2>
-						<p>• <strong>Software Architecture:</strong> Designed scalable, maintainable systems using
-							design patterns</p>
-						<p>• <strong>Real-time Systems:</strong> Handled timing-critical data processing and
-							visualization</p>
-						<p>• <strong>Team Leadership:</strong> Coordinated with sub-teams and mentored junior developers
-						</p>
-					</div>
-				</div>
-
-				<div class="highlightable work-experience 
-                    skill-programming
+                <div class="highlightable work-experience 
+                    skill-hardware
                     skill-problem-solving
-                    skill-software-tools" style="--i: 3;" data-experience="internship" data-skill-default="
-                        <li>Developed backend services using Python and Flask</li>
-                        <li>Participated in agile development processes</li>
-                        <li>Implemented unit tests and documentation</li>" data-skill-programming="
-                        <li>Python backend development</li>
-                        <li>RESTful API design</li>
-                        <li>Database integration with SQLAlchemy</li>" data-skill-problem-solving="
-                        <li>Performance optimization</li>
-                        <li>API response time improvement</li>
-                        <li>Database query optimization</li>" data-skill-software-tools="
-                        <li>Docker containerization</li>
-                        <li>PostgreSQL database</li>
-                        <li>Postman for API testing</li>">
-				</div>
-			</div>
-		</section>
+                    skill-teamwork"
+                    data-experience="jobnext24"
+                    data-skill-default="
+                        <li>Production of industrial containers</li>
+                        <li>Quality control processes</li>
+                        <li>Machine maintenance</li>"
+                    data-skill-hardware="
+                        <p>Hands-on experience with industrial machinery and manufacturing equipment.</p>"
+                    data-skill-problem-solving="
+                        <p>Quality control and troubleshooting production issues.</p>"
+                    data-skill-teamwork="
+                        <p>Collaborative production line operations.</p>">
+                    
+                    <strong class="experience-title">Production Worker</strong>
+                    <em class="experience-details">JobNext24 GmbH | Oct 2020 – Aug 2021</em>
+                    <ul class="experience-list">
+                        <li>Production of industrial containers</li>
+                        <li>Quality control processes</li>
+                        <li>Machine maintenance</li>
+                    </ul>
 
-		<!-- Projects Section -->
-		<section id="projects" class="section">
-			<h2>Featured Projects</h2>
-			<div class="projects-grid">
-				<div class="highlightable projects 
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Production Worker</h1>
+                        <p class="employment-details">JobNext24 GmbH | Oct 2020 – Aug 2021 | 10 Months</p>
+                        
+                        <h2>Description</h2>
+                        <p>Worked in industrial production manufacturing containers, responsible for quality control processes and basic machine maintenance.</p>
+                        
+                        <h2>Responsibilities</h2>
+                        <ul>
+                            <li>Production of industrial containers</li>
+                            <li>Quality control and inspection</li>
+                            <li>Machine maintenance and basic troubleshooting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlightable work-experience 
+                    skill-communication
+                    skill-teamwork
+                    skill-problem-solving"
+                    data-experience="unidos-cuernavaca"
+                    data-skill-default="
+                        <li>Team leader for volunteer staff</li>
+                        <li>Logistics for social activities</li>
+                        <li>Social counseling</li>"
+                    data-skill-communication="
+                        <p>Social counseling and community engagement with diverse groups.</p>"
+                    data-skill-teamwork="
+                        <p>Leadership of volunteer teams for community projects.</p>"
+                    data-skill-problem-solving="
+                        <p>Logistics planning and coordination for social activities.</p>">
+                    
+                    <strong class="experience-title">Volunteer Work</strong>
+                    <em class="experience-details">Unidos Cuernavaca | Jul 2017 – Feb 2020</em>
+                    <ul class="experience-list">
+                        <li>Team leader for volunteer staff</li>
+                        <li>Logistics for social activities</li>
+                        <li>Social counseling</li>
+                    </ul>
+
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Volunteer Work</h1>
+                        <p class="employment-details">Unidos Cuernavaca | Jul 2017 – Feb 2020 | 3 Years</p>
+                        
+                        <h2>Description</h2>
+                        <p>Volunteer leadership role at Unidos Cuernavaca, a social organization in Mexico. Responsible for coordinating volunteer activities, logistics, and providing social counseling support to the community.</p>
+                        
+                        <h2>Responsibilities</h2>
+                        <ul>
+                            <li>Team leader for volunteer staff coordination</li>
+                            <li>Logistics planning for social activities and events</li>
+                            <li>Social counseling and community support</li>
+                        </ul>
+
+                        <h2>Skills Gained</h2>
+                        <div class="skills-list">
+                            <p class="skill-item"><span class="skill-title">Leadership</span>: Managing and motivating volunteer teams.</p>
+                            <p class="skill-item"><span class="skill-title">Communication</span>: Social counseling and community engagement.</p>
+                            <p class="skill-item"><span class="skill-title">Problem Solving</span>: Logistics and event coordination.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="highlightable projects 
+                    skill-programming
+                    skill-software-tools"
+                    data-experience="graphing-tool"
+                    data-skill-default="
+                        <li>FFT analysis and visualization</li>
+                        <li>Fractal exploration</li>
+                        <li>Fourier synthesis</li>"
+                    data-skill-programming="
+                        <p>Java implementation with complex mathematical algorithms and data visualization.</p>"
+                    data-skill-software-tools="
+                        <p>Built using IntelliJ with custom graphics rendering.</p>">
+                    
+                    <strong class="experience-title">Graphing Tool</strong>
+                    <em class="experience-details">Java | University Project</em>
+                    <ul class="experience-list">
+                        <li>FFT analysis and visualization</li>
+                        <li>Fractal exploration</li>
+                        <li>Fourier synthesis</li>
+                    </ul>
+
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Graphing Tool</h1>
+                        <p class="employment-details">Java | University Project</p>
+                        
+                        <h2>Description</h2>
+                        <p>Comprehensive visualization tool for mathematical analysis including Fast Fourier Transform (FFT) analysis, fractal exploration, and Fourier synthesis. Built entirely in Java with custom graphics rendering.</p>
+                        
+                        <h2>Features</h2>
+                        <ul>
+                            <li>FFT analysis with real-time visualization</li>
+                            <li>Interactive fractal exploration (Mandelbrot, Julia sets)</li>
+                            <li>Fourier synthesis for signal reconstruction</li>
+                            <li>Custom UI components for mathematical input</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlightable projects 
                     skill-programming
                     skill-software-tools
-                    skill-troubleshooting
-                    skill-self-directed-learning" style="--i: 4;" data-experience="telemetry-dashboard"
-					data-skill-default="
-                        <li>Real-time telemetry dashboard for Formula Student</li>
-                        <li>MVC architecture with JavaFX frontend</li>
-                        <li>Handles 1000Hz data streams from 50+ sensors</li>" data-skill-programming="
-                        <li>Complex multithreaded Java architecture</li>
-                        <li>Lock-free concurrent data structures</li>
-                        <li>Custom JavaFX components</li>" data-skill-software-tools="
-                        <li>JavaFX for UI development</li>
-                        <li>Maven dependency management</li>
-                        <li>CAN analyzer integration</li>" data-skill-troubleshooting="
-                        <li>Memory leak detection and fixes</li>
-                        <li>Race condition resolution</li>
-                        <li>Performance profiling</li>" data-skill-self-directed-learning="
-                        <li>Self-taught JavaFX advanced features</li>
-                        <li>Learned CAN protocol specifications</li>
-                        <li>Studied real-time system design</li>">
+                    skill-problem-solving"
+                    data-experience="vacuum-robot"
+                    data-skill-default="
+                        <li>Simulated robot control</li>
+                        <li>Java distributed services</li>
+                        <li>Multi-agent coordination</li>"
+                    data-skill-programming="
+                        <p>Java implementation with distributed services architecture.</p>"
+                    data-skill-software-tools="
+                        <p>Network programming and service-oriented design.</p>"
+                    data-skill-problem-solving="
+                        <p>Algorithm design for autonomous navigation and task coordination.</p>">
+                    
+                    <strong class="experience-title">Vacuum Robot</strong>
+                    <em class="experience-details">Java | Distributed Systems</em>
+                    <ul class="experience-list">
+                        <li>Simulated robot control</li>
+                        <li>Java distributed services</li>
+                        <li>Multi-agent coordination</li>
+                    </ul>
 
-					<strong class="experience-title">Formula Student GUI Dashboard</strong>
-					<em class="experience-details">Team Project | 2023 – Present</em>
-					<ul class="experience-list">
-						<li>Real-time telemetry dashboard for Formula Student</li>
-						<li>MVC architecture with JavaFX frontend</li>
-						<li>Handles 1000Hz data streams from 50+ sensors</li>
-					</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Vacuum Robot</h1>
+                        <p class="employment-details">Java | Distributed Systems Project</p>
+                        
+                        <h2>Description</h2>
+                        <p>Control system for a simulated vacuum robot using Java distributed services. Implemented multi-agent coordination for efficient room coverage and task scheduling.</p>
+                        
+                        <h2>Technical Details</h2>
+                        <ul>
+                            <li>Distributed services architecture using Java RMI</li>
+                            <li>Path planning algorithms for efficient coverage</li>
+                            <li>Multi-agent coordination protocols</li>
+                        </ul>
+                    </div>
+                </div>
 
-					<!-- Popup content -->
-					<div class="popup-content" style="display: none;">
-						<h1>Formula Student GUI Dashboard</h1>
-						<p class="employment-details">Team Project | Sep 2023 – Present</p>
+                <div class="highlightable projects 
+                    skill-programming
+                    skill-hardware"
+                    data-experience="pong-console"
+                    data-skill-default="
+                        <li>Microcontroller programming in C</li>
+                        <li>Custom-built console hardware</li>
+                        <li>Real-time game logic</li>"
+                    data-skill-programming="
+                        <p>Low-level C programming for microcontroller with real-time constraints.</p>"
+                    data-skill-hardware="
+                        <p>Custom hardware design with display interface and input controls.</p>">
+                    
+                    <strong class="experience-title">Pong Console</strong>
+                    <em class="experience-details">C | Embedded Systems</em>
+                    <ul class="experience-list">
+                        <li>Microcontroller programming in C</li>
+                        <li>Custom-built console hardware</li>
+                        <li>Real-time game logic</li>
+                    </ul>
 
-						<h2>Project Overview</h2>
-						<p>A sophisticated real-time telemetry system designed for our Formula Student electric race
-							car, providing comprehensive monitoring, analysis, and control capabilities essential for
-							race strategy and vehicle optimization.</p>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Pong Console</h1>
+                        <p class="employment-details">C | Embedded Systems Project</p>
+                        
+                        <h2>Description</h2>
+                        <p>Microcontroller-based Pong game on a custom-built console. Implemented in C with direct hardware control for display output and input handling.</p>
+                        
+                        <h2>Technical Details</h2>
+                        <ul>
+                            <li>Bare-metal C programming for microcontroller</li>
+                            <li>Custom display driver implementation</li>
+                            <li>Real-time game loop with interrupt handling</li>
+                            <li>Hardware input debouncing and processing</li>
+                        </ul>
+                    </div>
+                </div>
 
-						<h2>Technical Features</h2>
-						<ul>
-							<li>Real-time data visualization with customizable dashboards</li>
-							<li>High-frequency data logging (up to 1000Hz)</li>
-							<li>GPS-based lap time analysis and racing line optimization</li>
-							<li>Predictive analytics for battery management</li>
-							<li>Remote monitoring via WebSocket connection</li>
-						</ul>
+                <div class="highlightable projects 
+                    skill-programming
+                    skill-software-tools
+                    skill-problem-solving"
+                    data-experience="odyssey-game"
+                    data-skill-default="
+                        <li>Java 2D game development</li>
+                        <li>Custom-built game engine</li>
+                        <li>Physics and collision systems</li>"
+                    data-skill-programming="
+                        <p>Complete game architecture with custom engine development in Java.</p>"
+                    data-skill-software-tools="
+                        <p>Used IntelliJ, Git, and custom asset pipeline.</p>"
+                    data-skill-problem-solving="
+                        <p>Game loop optimization and collision detection algorithms.</p>">
+                    
+                    <strong class="experience-title">Odyssey</strong>
+                    <em class="experience-details">Java | Game Development</em>
+                    <ul class="experience-list">
+                        <li>Java 2D game development</li>
+                        <li>Custom-built game engine</li>
+                        <li>Physics and collision systems</li>
+                    </ul>
 
-						<h2>Implementation Details</h2>
-						<ul>
-							<li>Clean MVC architecture with dependency injection</li>
-							<li>Multi-threaded design for concurrent data processing</li>
-							<li>Custom JavaFX controls with hardware acceleration</li>
-							<li>Time-series database for efficient data storage</li>
-						</ul>
-					</div>
-				</div>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Odyssey</h1>
+                        <p class="employment-details">Java | Game Development Project</p>
+                        
+                        <h2>Description</h2>
+                        <p>A 2D adventure game built with a custom-made game engine in Java. Features include a complete physics system, collision detection, sprite animation, and level management.</p>
+                        
+                        <h2>Technical Features</h2>
+                        <ul>
+                            <li>Custom game engine architecture</li>
+                            <li>Physics and collision detection system</li>
+                            <li>Sprite-based animation system</li>
+                            <li>Level loading and management</li>
+                            <li>Entity component system design</li>
+                        </ul>
+                    </div>
+                </div>
 
-				<div class="highlightable projects 
+                <div class="highlightable projects 
                     skill-programming
                     skill-hardware
-                    skill-troubleshooting" style="--i: 5;" data-experience="iot-system" data-skill-default="
-                        <li>IoT environmental monitoring system</li>
-                        <li>STM32 microcontroller with FreeRTOS</li>
-                        <li>LoRaWAN communication for sensor network</li>" data-skill-programming="
-                        <li>Embedded C firmware development</li>
-                        <li>FreeRTOS task scheduling</li>
-                        <li>Interrupt-driven programming</li>" data-skill-hardware="
-                        <li>PCB design and layout</li>
-                        <li>Component selection</li>
-                        <li>Power management circuits</li>" data-skill-troubleshooting="
-                        <li>Timing issue debugging</li>
-                        <li>Power consumption optimization</li>
-                        <li>Signal integrity analysis</li>">
+                    skill-software-tools"
+                    data-experience="pynq-integration"
+                    data-skill-default="
+                        <li>Python FPGA integration</li>
+                        <li>Hardware acceleration</li>
+                        <li>PYNQ board and Steam Deck</li>"
+                    data-skill-programming="
+                        <p>Python development for FPGA overlay management and data processing.</p>"
+                    data-skill-hardware="
+                        <p>FPGA hardware acceleration using programmable logic.</p>"
+                    data-skill-software-tools="
+                        <p>PYNQ framework and Jupyter integration for development.</p>">
+                    
+                    <strong class="experience-title">PYNQ Integration</strong>
+                    <em class="experience-details">Python | FPGA Project</em>
+                    <ul class="experience-list">
+                        <li>Python FPGA integration</li>
+                        <li>Hardware acceleration</li>
+                        <li>PYNQ board and Steam Deck</li>
+                    </ul>
 
-					<strong class="experience-title">IoT Environmental Monitor</strong>
-					<em class="experience-details">University Project | 2024</em>
-					<ul class="experience-list">
-						<li>IoT environmental monitoring system</li>
-						<li>STM32 microcontroller with FreeRTOS</li>
-						<li>LoRaWAN communication for sensor network</li>
-					</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>PYNQ Integration</h1>
+                        <p class="employment-details">Python | FPGA Hardware Acceleration Project</p>
+                        
+                        <h2>Description</h2>
+                        <p>Hardware acceleration project using PYNQ board with Python interface. Explored FPGA capabilities with integration to Steam Deck for portable computing acceleration.</p>
+                        
+                        <h2>Technical Details</h2>
+                        <ul>
+                            <li>Python-based FPGA overlay development</li>
+                            <li>Hardware accelerated computation pipelines</li>
+                            <li>Integration with portable computing platform</li>
+                            <li>Data transfer optimization between PS and PL</li>
+                        </ul>
+                    </div>
+                </div>
 
-					<!-- Popup content -->
-					<div class="popup-content" style="display: none;">
-						<h1>IoT Environmental Monitor</h1>
-						<p class="employment-details">University Project | Mar 2024 – Jun 2024</p>
-
-						<h2>Project Description</h2>
-						<p>Designed and implemented a distributed embedded system for real-time environmental monitoring
-							in smart buildings, using wireless sensor networks and edge computing.</p>
-
-						<h2>Technical Implementation</h2>
-						<ul>
-							<li>STM32F4 ARM Cortex-M4 microcontroller</li>
-							<li>FreeRTOS for real-time task scheduling</li>
-							<li>LoRaWAN for long-range, low-power communication</li>
-							<li>Integration of temperature, humidity, CO2, and motion sensors</li>
-							<li>Solar-powered with intelligent battery management</li>
-						</ul>
-
-						<h2>Skills Gained</h2>
-						<p>• <strong>Embedded Systems:</strong> Developed firmware for resource-constrained devices</p>
-						<p>• <strong>Power Optimization:</strong> Achieved ultra-low power consumption</p>
-						<p>• <strong>Networking:</strong> Implemented mesh networking protocols</p>
-					</div>
-				</div>
-
-				<div class="highlightable projects 
+                <div class="highlightable projects 
                     skill-programming
-                    skill-self-directed-learning
-                    skill-software-tools" style="--i: 6;" data-experience="cv-website" data-skill-default="
-                        <li>Interactive portfolio with modern UI/UX</li>
-                        <li>Glassmorphism design with animations</li>
-                        <li>Dynamic skill-based filtering system</li>" data-skill-programming="
-                        <li>HTML5, CSS3, JavaScript</li>
-                        <li>Complex CSS animations</li>
-                        <li>DOM manipulation</li>" data-skill-self-directed-learning="
-                        <li>Self-taught modern web design</li>
-                        <li>Learned glassmorphism techniques</li>
-                        <li>Studied UX best practices</li>" data-skill-software-tools="
-                        <li>VS Code development</li>
-                        <li>Chrome DevTools debugging</li>
-                        <li>Git version control</li>">
+                    skill-software-tools"
+                    data-experience="cv-website"
+                    data-skill-default="
+                        <li>Modern portfolio with glassmorphism design</li>
+                        <li>Dynamic skill-based filtering</li>
+                        <li>Responsive and accessible</li>"
+                    data-skill-programming="
+                        <p>HTML5, CSS3, JavaScript with modern web standards.</p>"
+                    data-skill-software-tools="
+                        <p>VS Code, Git, Chrome DevTools, GitHub Pages.</p>">
+                    
+                    <strong class="experience-title">This Portfolio Website</strong>
+                    <em class="experience-details">HTML/CSS/JS | Personal Project</em>
+                    <ul class="experience-list">
+                        <li>Modern portfolio with glassmorphism design</li>
+                        <li>Dynamic skill-based filtering</li>
+                        <li>Responsive and accessible</li>
+                    </ul>
 
-					<strong class="experience-title">This Portfolio Website 🚀</strong>
-					<em class="experience-details">Personal Project | 2025</em>
-					<ul class="experience-list">
-						<li>Interactive portfolio with modern UI/UX</li>
-						<li>Glassmorphism design with animations</li>
-						<li>Dynamic skill-based filtering system</li>
-					</ul>
+                    <!-- Popup content -->
+                    <div class="popup-content" style="display: none;">
+                        <h1>Portfolio Website</h1>
+                        <p class="employment-details">Personal Project | 2025</p>
+                        
+                        <h2>Description</h2>
+                        <p>Modern, interactive portfolio website showcasing professional experience and projects with a unique skill-based filtering system and clean glassmorphism design.</p>
+                        
+                        <h2>Technical Features</h2>
+                        <ul>
+                            <li>Glassmorphism UI with backdrop filters</li>
+                            <li>Dynamic skill filtering system</li>
+                            <li>Subtle animations and micro-interactions</li>
+                            <li>Fully responsive design</li>
+                            <li>Hosted on GitHub Pages with custom domain</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-					<!-- Popup content -->
-					<div class="popup-content" style="display: none;">
-						<h1>This Portfolio Website 🚀</h1>
-						<p class="employment-details">Personal Project | Jan 2025 – Present</p>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>Technical Skills</h2>
+            <div class="projects-grid">
+                <div class="highlightable projects skill-programming">
+                    <strong class="experience-title">Programming Languages</strong>
+                    <ul class="experience-list">
+                        <li>Python – Dashboard apps, data processing</li>
+                        <li>Java – OOP, GUI applications, games</li>
+                        <li>C – Embedded systems, microcontrollers</li>
+                        <li>C# – Unity game development</li>
+                        <li>VHDL – FPGA programming</li>
+                    </ul>
+                </div>
 
-						<h2>Description</h2>
-						<p>Developed this modern, interactive portfolio website showcasing professional experience and
-							projects with a unique skill-based filtering system and glassmorphism design.</p>
+                <div class="highlightable projects skill-software-tools">
+                    <strong class="experience-title">Tools & Technologies</strong>
+                    <ul class="experience-list">
+                        <li>Version Control: Git, GitHub</li>
+                        <li>IDEs: VS Code, Eclipse, IntelliJ</li>
+                        <li>Databases: PostgreSQL, SQLite</li>
+                        <li>Containers: Docker</li>
+                        <li>Other: pgAdmin, LTSpice</li>
+                    </ul>
+                </div>
 
-						<h2>Technical Features</h2>
-						<ul>
-							<li>Glassmorphism UI with backdrop filters</li>
-							<li>Dynamic skill filtering system</li>
-							<li>Smooth animations and micro-interactions</li>
-							<li>Fully responsive design</li>
-							<li>Custom CSS animations and gradients</li>
-						</ul>
+                <div class="highlightable projects skill-hardware">
+                    <strong class="experience-title">Hardware & Embedded</strong>
+                    <ul class="experience-list">
+                        <li>Protocols: CAN bus, I2C, SPI</li>
+                        <li>Platforms: PYNQ, Microcontrollers</li>
+                        <li>Simulation: LTSpice, EDA Playground</li>
+                        <li>Digital Signal Processing</li>
+                    </ul>
+                </div>
 
-						<h2>Skills Demonstrated</h2>
-						<p>• <strong>Web Development:</strong> Modern HTML5, CSS3, and JavaScript</p>
-						<p>• <strong>UI/UX Design:</strong> Created engaging, intuitive interface</p>
-						<p>• <strong>Self-Learning:</strong> Independently mastered web technologies</p>
-					</div>
-				</div>
-			</div>
-		</section>
+                <div class="highlightable projects skill-communication">
+                    <strong class="experience-title">Languages</strong>
+                    <ul class="experience-list">
+                        <li>Spanish – Native</li>
+                        <li>German – C1 (DSD II)</li>
+                        <li>English – C1 (Cambridge)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
 
-		<!-- Skills Section -->
-		<section id="skills" class="section">
-			<h2>Technical Expertise</h2>
-			<div class="projects-grid">
-				<div class="highlightable projects" style="--i: 7;">
-					<strong class="experience-title">Programming Languages</strong>
-					<ul class="experience-list">
-						<li>Python (Advanced) - Data analysis, backend</li>
-						<li>Java (Advanced) - OOP, GUI applications</li>
-						<li>C/C++ (Intermediate) - Embedded systems</li>
-						<li>JavaScript (Intermediate) - Web development</li>
-						<li>MATLAB (Basic) - Signal processing</li>
-					</ul>
-				</div>
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popup-overlay">
+        <button class="close-btn" id="close-popup">×</button>
+    </div>
 
-				<div class="highlightable projects" style="--i: 8;">
-					<strong class="experience-title">Tools & Technologies</strong>
-					<ul class="experience-list">
-						<li>Version Control: Git, GitHub</li>
-						<li>IDEs: IntelliJ, VS Code</li>
-						<li>Build: Maven, Gradle</li>
-						<li>Containers: Docker</li>
-						<li>Databases: PostgreSQL, MongoDB</li>
-					</ul>
-				</div>
+    <script>
+        // Skill filtering functionality
+        const skillButtons = document.querySelectorAll('.skill-button');
+        const highlightables = document.querySelectorAll('.highlightable');
+        let activeSkill = null;
 
-				<div class="highlightable projects" style="--i: 9;">
-					<strong class="experience-title">Hardware & Embedded</strong>
-					<ul class="experience-list">
-						<li>Microcontrollers: STM32, Arduino</li>
-						<li>Protocols: I2C, SPI, CAN bus</li>
-						<li>RTOS: FreeRTOS</li>
-						<li>PCB Design: KiCad</li>
-						<li>Test Equipment: Oscilloscope</li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	</div>
+        skillButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const skill = button.dataset.skill;
+                
+                // Toggle active state
+                if (activeSkill === skill) {
+                    // Deactivate
+                    button.classList.remove('active');
+                    activeSkill = null;
+                    
+                    // Reset all cards
+                    highlightables.forEach(card => {
+                        card.classList.remove('highlight', 'dimmed');
+                        // Reset to default content
+                        const defaultContent = card.dataset.skillDefault;
+                        if (defaultContent) {
+                            const list = card.querySelector('.experience-list');
+                            if (list) list.innerHTML = defaultContent;
+                        }
+                    });
+                } else {
+                    // Deactivate previous
+                    skillButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    activeSkill = skill;
+                    
+                    // Filter cards
+                    highlightables.forEach(card => {
+                        if (card.classList.contains(`skill-${skill}`)) {
+                            card.classList.add('highlight');
+                            card.classList.remove('dimmed');
+                            
+                            // Update content to skill-specific
+                            const skillContent = card.dataset[`skill${skill.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join('')}`];
+                            if (skillContent) {
+                                const list = card.querySelector('.experience-list');
+                                if (list) list.innerHTML = skillContent;
+                            }
+                        } else {
+                            card.classList.remove('highlight');
+                            card.classList.add('dimmed');
+                        }
+                    });
+                }
+            });
+        });
 
-	<!-- Popup Overlay -->
-	<div class="popup-overlay"></div>
+        // Popup functionality
+        const popupOverlay = document.getElementById('popup-overlay');
+        const closePopupBtn = document.getElementById('close-popup');
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// Add navbar scroll effect
-			window.addEventListener('scroll', function () {
-				const navbar = document.getElementById('navbar');
-				if (window.scrollY > 50) {
-					navbar.classList.add('scrolled');
-				} else {
-					navbar.classList.remove('scrolled');
-				}
-			});
+        highlightables.forEach(card => {
+            card.addEventListener('click', () => {
+                const popupContent = card.querySelector('.popup-content');
+                if (popupContent) {
+                    // Clone and show popup
+                    const clone = popupContent.cloneNode(true);
+                    clone.style.display = 'block';
+                    
+                    // Clear previous content
+                    const existingContent = popupOverlay.querySelector('.popup-content:not(#close-popup)');
+                    if (existingContent && existingContent !== closePopupBtn) {
+                        existingContent.remove();
+                    }
+                    
+                    popupOverlay.appendChild(clone);
+                    popupOverlay.style.display = 'block';
+                    
+                    // Trigger animation
+                    requestAnimationFrame(() => {
+                        popupOverlay.classList.add('active');
+                    });
+                }
+            });
+        });
 
-			// Skill filters functionality
-			const skillFiltersWrapper = document.querySelector(".skill-filters-wrapper");
-			const skillFilters = document.querySelector(".skill-filters");
+        // Close popup
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            setTimeout(() => {
+                popupOverlay.style.display = 'none';
+                const content = popupOverlay.querySelector('.popup-content');
+                if (content) content.remove();
+            }, 300);
+        }
 
-			function toggleFixed() {
-				const wrapperTop = skillFiltersWrapper.getBoundingClientRect().top;
-				if (wrapperTop <= 70) {
-					skillFilters.classList.add("fixed");
-				} else {
-					skillFilters.classList.remove("fixed");
-				}
-			}
+        closePopupBtn.addEventListener('click', closePopup);
+        popupOverlay.addEventListener('click', (e) => {
+            if (e.target === popupOverlay) closePopup();
+        });
 
-			window.addEventListener("scroll", toggleFixed);
-			toggleFixed();
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closePopup();
+        });
 
-			// Skill buttons and highlighting
-			const skillButtons = document.querySelectorAll(".skill-button");
-			const experienceBoxes = document.querySelectorAll(".highlightable");
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
 
-			// Create popup elements
-			const popupOverlay = document.querySelector(".popup-overlay");
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.style.background = 'rgba(3, 7, 18, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(3, 7, 18, 0.8)';
+            }
+            
+            lastScroll = currentScroll;
+        });
 
-			const popup = document.createElement("div");
-			popup.className = "popup-content";
-			popup.innerHTML = '<span class="close-button">×</span><div id="popup-inner-content"></div>';
-			popup.style.display = "none";
-			document.body.appendChild(popup);
-
-			const popupInnerContent = popup.querySelector("#popup-inner-content");
-			const closeButton = popup.querySelector(".close-button");
-
-			// Skill prompt animation
-			let hasAnimated = false;
-			const skillPromptContainer = document.querySelector(".skill-prompt-container");
-			const skillPromptText = document.querySelector("#skill-prompt-text");
-
-			// Reset to default function
-			function resetToDefault() {
-				experienceBoxes.forEach(box => {
-					box.classList.remove("highlight");
-					const defaultText = box.getAttribute("data-skill-default");
-					const experienceList = box.querySelector(".experience-list");
-
-					if (defaultText && experienceList) {
-						experienceList.innerHTML = defaultText;
-					}
-				});
-			}
-
-			resetToDefault();
-
-			// Skill button click handler
-			skillButtons.forEach(button => {
-				button.addEventListener("click", function () {
-					// Hide skill prompt on first interaction
-					if (!hasAnimated) {
-						skillPromptContainer.classList.add("hidden");
-						hasAnimated = true;
-					}
-
-					const selectedSkill = this.getAttribute("data-skill");
-					const isActive = this.classList.contains("active");
-
-					// Reset all buttons
-					skillButtons.forEach(btn => {
-						btn.classList.remove("active");
-					});
-
-					resetToDefault();
-
-					if (!isActive) {
-						this.classList.add("active");
-
-						// Highlight relevant experience boxes WITHOUT adding skill title
-						experienceBoxes.forEach(box => {
-							if (box.classList.contains(`skill-${selectedSkill}`)) {
-								const experienceList = box.querySelector(".experience-list");
-								const newContent = box.getAttribute(`data-skill-${selectedSkill}`);
-
-								if (newContent && experienceList) {
-									experienceList.innerHTML = newContent;
-									box.classList.add("highlight");
-								}
-							}
-						});
-					}
-				});
-			});
-
-			// Experience box click handler for popup
-			experienceBoxes.forEach(box => {
-				box.addEventListener("click", function (e) {
-					if (e.target.closest(".skill-button")) return;
-
-					const popupSource = box.querySelector(".popup-content");
-					if (popupSource) {
-						popupInnerContent.innerHTML = popupSource.innerHTML;
-						popup.style.display = "block";
-						popupOverlay.style.display = "block";
-						document.body.style.overflow = "hidden";
-					}
-				});
-			});
-
-			// Mouse move effect for cards
-			experienceBoxes.forEach(box => {
-				box.addEventListener('mousemove', (e) => {
-					const rect = box.getBoundingClientRect();
-					const x = ((e.clientX - rect.left) / rect.width) * 100;
-					const y = ((e.clientY - rect.top) / rect.height) * 100;
-					box.style.setProperty('--mouse-x', `${x}%`);
-					box.style.setProperty('--mouse-y', `${y}%`);
-				});
-			});
-
-			// Close popup handlers
-			closeButton.addEventListener("click", function () {
-				popup.style.display = "none";
-				popupOverlay.style.display = "none";
-				document.body.style.overflow = "auto";
-			});
-
-			popupOverlay.addEventListener("click", function () {
-				popup.style.display = "none";
-				popupOverlay.style.display = "none";
-				document.body.style.overflow = "auto";
-			});
-
-			// ESC key to close popup
-			document.addEventListener("keydown", function (e) {
-				if (e.key === "Escape" && popup.style.display === "block") {
-					popup.style.display = "none";
-					popupOverlay.style.display = "none";
-					document.body.style.overflow = "auto";
-				}
-			});
-
-			// Smooth scrolling for navigation
-			document.querySelectorAll('.navbar-links a').forEach(anchor => {
-				anchor.addEventListener('click', function (e) {
-					e.preventDefault();
-					const targetId = this.getAttribute('href').substring(1);
-					const targetSection = document.getElementById(targetId);
-					if (targetSection) {
-						targetSection.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start'
-						});
-					}
-				});
-			});
-		});
-	</script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>

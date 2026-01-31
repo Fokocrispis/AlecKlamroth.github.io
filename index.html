@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Alec Jens Klamroth - Software Developer | Information Engineering Student at HAW Hamburg">
+    <meta name="description" content="Alec Jens Klamroth - Software Developer Portfolio. Showcasing expertise in Python, Java, and Embedded Systems.">
     <meta name="author" content="Alec Jens Klamroth">
     <title>Alec Klamroth - Software Developer Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* HAW Hamburg Color Palette */
+        /* HAW Hamburg Color Palette - Renamed Variables to Generic for clarity, keeping colors */
         :root {
-            --haw-primary: #1E439A;
-            --haw-primary-dark: #152d6b;
-            --haw-primary-light: #2a5bc4;
-            --haw-secondary: #A0BDDE;
-            --haw-secondary-light: #c5d9ed;
-            --haw-accent: #4a90d9;
+            --primary: #1E439A;
+            --primary-dark: #152d6b;
+            --primary-light: #2a5bc4;
+            --secondary: #A0BDDE;
+            --secondary-light: #c5d9ed;
+            --accent: #4a90d9;
             --dark-bg: #0a0f1a;
             --card-bg: rgba(30, 67, 154, 0.08);
             --glass-bg: rgba(160, 189, 222, 0.05);
@@ -43,7 +43,7 @@
             overflow-x: hidden;
         }
 
-        /* Animated Background with HAW colors */
+        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -79,7 +79,7 @@
         .orb-1 {
             width: 400px;
             height: 400px;
-            background: var(--haw-primary);
+            background: var(--primary);
             top: -100px;
             left: -100px;
             animation-delay: 0s;
@@ -88,7 +88,7 @@
         .orb-2 {
             width: 300px;
             height: 300px;
-            background: var(--haw-secondary);
+            background: var(--secondary);
             bottom: -50px;
             right: -50px;
             animation-delay: -7s;
@@ -97,7 +97,7 @@
         .orb-3 {
             width: 200px;
             height: 200px;
-            background: var(--haw-accent);
+            background: var(--accent);
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -196,7 +196,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--haw-primary);
+            background: var(--primary);
             transition: width 0.2s ease;
         }
 
@@ -242,14 +242,14 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, var(--haw-primary), var(--haw-secondary));
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
         }
 
         .profile-image {
             width: 170px;
             height: 170px;
             border-radius: 20px;
-            background: linear-gradient(135deg, var(--haw-primary), var(--haw-secondary));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             flex-shrink: 0;
             overflow: hidden;
             box-shadow: 
@@ -275,7 +275,7 @@
 
         .hero-content .subtitle {
             font-size: 1.2rem;
-            color: var(--haw-secondary);
+            color: var(--secondary);
             margin-bottom: 1rem;
             font-weight: 600;
             letter-spacing: 0.5px;
@@ -309,7 +309,7 @@
 
         .contact-item:hover {
             background: rgba(30, 67, 154, 0.3);
-            border-color: var(--haw-primary);
+            border-color: var(--primary);
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(30, 67, 154, 0.25);
@@ -369,13 +369,13 @@
 
         .skill-button:hover {
             background: rgba(30, 67, 154, 0.2);
-            border-color: var(--haw-primary);
+            border-color: var(--primary);
             color: white;
         }
 
         .skill-button.active {
-            background: var(--haw-primary);
-            border-color: var(--haw-primary);
+            background: var(--primary);
+            border-color: var(--primary);
             color: white;
             box-shadow: 0 4px 15px rgba(30, 67, 154, 0.4);
         }
@@ -414,7 +414,7 @@
             content: '';
             width: 4px;
             height: 24px;
-            background: linear-gradient(180deg, var(--haw-primary), var(--haw-secondary));
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
             border-radius: 2px;
         }
 
@@ -453,7 +453,7 @@
         }
 
         .highlightable:hover {
-            border-color: var(--haw-primary);
+            border-color: var(--primary);
             transform: translateY(-6px);
             box-shadow: 
                 0 20px 40px rgba(30, 67, 154, 0.2),
@@ -465,7 +465,7 @@
         }
 
         .highlightable.highlight {
-            border-color: var(--haw-primary);
+            border-color: var(--primary);
             box-shadow: 
                 0 0 30px rgba(30, 67, 154, 0.3),
                 inset 0 0 20px rgba(30, 67, 154, 0.05);
@@ -486,7 +486,7 @@
 
         .experience-details {
             font-size: 0.8rem;
-            color: var(--haw-secondary);
+            color: var(--secondary);
             display: block;
             margin-bottom: 0.8rem;
             font-weight: 500;
@@ -514,7 +514,7 @@
             top: 0.65rem;
             width: 6px;
             height: 6px;
-            background: var(--haw-primary);
+            background: var(--primary);
             border-radius: 50%;
         }
 
@@ -581,7 +581,7 @@
         }
 
         .popup-content .employment-details {
-            color: var(--haw-secondary);
+            color: var(--secondary);
             font-size: 0.9rem;
             margin-bottom: 1.5rem;
             font-weight: 500;
@@ -589,7 +589,7 @@
 
         .popup-content h2 {
             font-size: 1rem;
-            color: var(--haw-secondary);
+            color: var(--secondary);
             margin: 1.5rem 0 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -624,7 +624,7 @@
 
         .popup-content .skill-title {
             font-weight: 600;
-            color: var(--haw-primary-light);
+            color: var(--primary-light);
         }
 
         .close-btn {
@@ -646,9 +646,9 @@
         }
 
         .close-btn:hover {
-            background: var(--haw-primary);
+            background: var(--primary);
             color: white;
-            border-color: var(--haw-primary);
+            border-color: var(--primary);
         }
 
         /* Scrollbar Styling */
@@ -661,12 +661,12 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--haw-primary);
+            background: var(--primary);
             border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--haw-primary-light);
+            background: var(--primary-light);
         }
 
         /* Footer */
@@ -680,7 +680,7 @@
         }
 
         .footer a {
-            color: var(--haw-secondary);
+            color: var(--secondary);
             text-decoration: none;
         }
 
@@ -757,7 +757,6 @@
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
@@ -765,7 +764,6 @@
     </div>
     <div class="grid-overlay"></div>
 
-    <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="navbar-content">
             <div class="navbar-brand">Alec Klamroth</div>
@@ -779,9 +777,7 @@
         </div>
     </nav>
 
-    <!-- Container -->
     <div class="container">
-        <!-- Hero Section -->
         <section id="home" class="hero-section">
             <div class="profile-image">
                 <img src="images/profile_image.jpg" alt="Alec Klamroth">
@@ -791,10 +787,7 @@
                 <p class="subtitle">Software Developer</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        📧 <a href="mailto:alec.klamroth@gmail.com">alec.klamroth@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        📱 +49 177 749 3858
+                        📧 <a href="#">Contact via LinkedIn</a>
                     </div>
                     <div class="contact-item">
                         📍 Hamburg, Germany
@@ -806,12 +799,10 @@
             </div>
         </section>
 
-        <!-- Skill Prompt -->
         <div class="skill-prompt-container">
             <span id="skill-prompt-text">Filter by skills</span>
         </div>
 
-        <!-- Skill Filters -->
         <div class="skill-filters-wrapper">
             <div class="skill-filters">
                 <button class="skill-button" data-skill="programming">Programming</button>
@@ -823,7 +814,6 @@
             </div>
         </div>
 
-        <!-- Education Section -->
         <section id="education" class="section">
             <h2>Education</h2>
             <div class="education-grid">
@@ -832,7 +822,7 @@
                     skill-teamwork
                     skill-software-tools
                     skill-hardware"
-                    data-experience="haw-hamburg"
+                    data-experience="university"
                     data-skill-default="
                         <li>Combined computer science, electrical engineering, and IT program</li>
                         <li>Strong foundation in software and hardware development</li>
@@ -846,8 +836,8 @@
                     data-skill-hardware="
                         <p>Designed, built, and tested circuits, applying electrical engineering principles to practical applications.</p>">
                     
-                    <strong class="experience-title">B.Sc. Information Engineering</strong>
-                    <em class="experience-details">HAW Hamburg | 2023 – Present | 6th Semester</em>
+                    <strong class="experience-title">Software Engineering & Development</strong>
+                    <em class="experience-details">University | 2023 – Present</em>
                     <ul class="experience-list">
                         <li>Combined computer science, electrical engineering, and IT program</li>
                         <li>Strong foundation in software and hardware development</li>
@@ -855,11 +845,11 @@
                     </ul>
 
                     <div class="popup-content" style="display: none;">
-                        <h1>B.Sc. Information Engineering</h1>
-                        <p class="employment-details">Hamburg University of Applied Sciences | Sep 2023 – Present | 6th Semester</p>
+                        <h1>Software Engineering & Development</h1>
+                        <p class="employment-details">University | Sep 2023 – Present</p>
                         
                         <h2>Description</h2>
-                        <p>Pursuing a Bachelor's degree in Information Engineering at HAW Hamburg, encompassing computer science, electronics, and information technology. The program balances theoretical knowledge with practical application across diverse tech-related fields.</p>
+                        <p>Pursuing a Bachelor's degree focused on Software Engineering, encompassing computer science, electronics, and information technology. The program balances theoretical knowledge with practical application across diverse tech-related fields.</p>
                         
                         <h2>Skills Gained</h2>
                         <div class="skills-list">
@@ -885,7 +875,7 @@
                         <p>Collaborative projects and group presentations across diverse subjects.</p>">
                     
                     <strong class="experience-title">International Baccalaureate Diploma</strong>
-                    <em class="experience-details">Swiss School Mexico | 2018 – 2020</em>
+                    <em class="experience-details">International School | 2018 – 2020</em>
                     <ul class="experience-list">
                         <li>Rigorous international curriculum with global perspective</li>
                         <li>Strong foundation in sciences and mathematics</li>
@@ -894,7 +884,7 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>International Baccalaureate Diploma</h1>
-                        <p class="employment-details">Swiss School Mexico | 2018 – 2020</p>
+                        <p class="employment-details">International School | 2018 – 2020</p>
                         
                         <h2>Description</h2>
                         <p>Completed the International Baccalaureate Diploma Programme, a rigorous two-year educational program recognized worldwide for its academic excellence and development of well-rounded, internationally-minded students.</p>
@@ -910,7 +900,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="section">
             <h2>Work Experience</h2>
             <div class="experience-grid">
@@ -920,7 +909,7 @@
                     skill-hardware
                     skill-teamwork
                     skill-problem-solving"
-                    data-experience="hawks-racing"
+                    data-experience="formula-student"
                     data-skill-default="
                         <li>Python-based dashboard with MVC architecture</li>
                         <li>CAN bus communication for vehicle systems</li>
@@ -937,7 +926,7 @@
                         <p>Diagnosed and resolved real-time communication issues in embedded automotive systems.</p>">
                     
                     <strong class="experience-title">Software Developer</strong>
-                    <em class="experience-details">HAWKS Racing | Sep 2024 – Present</em>
+                    <em class="experience-details">Formula Student Team | Sep 2024 – Present</em>
                     <ul class="experience-list">
                         <li>Python-based dashboard with MVC architecture</li>
                         <li>CAN bus communication for vehicle systems</li>
@@ -946,10 +935,10 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>Software Developer</h1>
-                        <p class="employment-details">HAWKS Racing (Formula Student Team) | Sep 2024 – Present | 1 Year</p>
+                        <p class="employment-details">Formula Student Team | Sep 2024 – Present | 1 Year</p>
                         
                         <h2>Description</h2>
-                        <p>Developing software solutions for HAWKS Racing, HAW Hamburg's Formula Student team. Responsible for creating a comprehensive dashboard application for real-time vehicle monitoring and data analysis.</p>
+                        <p>Developing software solutions for a Formula Student team. Responsible for creating a comprehensive dashboard application for real-time vehicle monitoring and data analysis.</p>
                         
                         <h2>Responsibilities</h2>
                         <ul>
@@ -972,7 +961,7 @@
                     skill-communication
                     skill-teamwork
                     skill-problem-solving"
-                    data-experience="peter-pane"
+                    data-experience="gastronomy"
                     data-skill-default="
                         <li>Customer service and beverage preparation</li>
                         <li>Fast-paced hospitality environment</li>
@@ -985,7 +974,7 @@
                         <p>Quick resolution of customer concerns and operational challenges.</p>">
                     
                     <strong class="experience-title">Bartender</strong>
-                    <em class="experience-details">Peter Pane | Feb 2022 – Present</em>
+                    <em class="experience-details">Gastronomy / Hospitality | Feb 2022 – Present</em>
                     <ul class="experience-list">
                         <li>Customer service and beverage preparation</li>
                         <li>Fast-paced hospitality environment</li>
@@ -994,7 +983,7 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>Bartender</h1>
-                        <p class="employment-details">Peter Pane | Feb 2022 – Present | 3+ Years</p>
+                        <p class="employment-details">Gastronomy / Hospitality | Feb 2022 – Present | 3+ Years</p>
                         
                         <h2>Description</h2>
                         <p>Working as a bartender in a busy restaurant environment, responsible for beverage preparation, customer service, and maintaining efficient bar operations during high-volume service periods.</p>
@@ -1012,7 +1001,7 @@
                     skill-hardware
                     skill-problem-solving
                     skill-teamwork"
-                    data-experience="jobnext24"
+                    data-experience="manufacturing"
                     data-skill-default="
                         <li>Production of industrial containers</li>
                         <li>Quality control processes</li>
@@ -1025,7 +1014,7 @@
                         <p>Collaborative production line operations.</p>">
                     
                     <strong class="experience-title">Production Worker</strong>
-                    <em class="experience-details">JobNext24 GmbH | Oct 2020 – Aug 2021</em>
+                    <em class="experience-details">Manufacturing Company | Oct 2020 – Aug 2021</em>
                     <ul class="experience-list">
                         <li>Production of industrial containers</li>
                         <li>Quality control processes</li>
@@ -1034,7 +1023,7 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>Production Worker</h1>
-                        <p class="employment-details">JobNext24 GmbH | Oct 2020 – Aug 2021 | 10 Months</p>
+                        <p class="employment-details">Manufacturing Company | Oct 2020 – Aug 2021 | 10 Months</p>
                         
                         <h2>Description</h2>
                         <p>Worked in industrial production manufacturing containers, responsible for quality control processes and basic machine maintenance.</p>
@@ -1052,7 +1041,7 @@
                     skill-communication
                     skill-teamwork
                     skill-problem-solving"
-                    data-experience="unidos-cuernavaca"
+                    data-experience="non-profit"
                     data-skill-default="
                         <li>Team leader for volunteer staff</li>
                         <li>Logistics for social activities</li>
@@ -1065,7 +1054,7 @@
                         <p>Logistics planning and coordination for social activities.</p>">
                     
                     <strong class="experience-title">Volunteer Work</strong>
-                    <em class="experience-details">Unidos Cuernavaca | Jul 2017 – Feb 2020</em>
+                    <em class="experience-details">Non-Profit Organization | Jul 2017 – Feb 2020</em>
                     <ul class="experience-list">
                         <li>Team leader for volunteer staff</li>
                         <li>Logistics for social activities</li>
@@ -1074,10 +1063,10 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>Volunteer Work</h1>
-                        <p class="employment-details">Unidos Cuernavaca | Jul 2017 – Feb 2020 | 3 Years</p>
+                        <p class="employment-details">Non-Profit Organization | Jul 2017 – Feb 2020 | 3 Years</p>
                         
                         <h2>Description</h2>
-                        <p>Volunteer leadership role at Unidos Cuernavaca, a social organization in Mexico. Responsible for coordinating volunteer activities, logistics, and providing social counseling support to the community.</p>
+                        <p>Volunteer leadership role at a social organization. Responsible for coordinating volunteer activities, logistics, and providing social counseling support to the community.</p>
                         
                         <h2>Responsibilities</h2>
                         <ul>
@@ -1097,7 +1086,6 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="section">
             <h2>Projects</h2>
             <div class="projects-grid">
@@ -1115,7 +1103,7 @@
                         <p>Built using IntelliJ with custom graphics rendering.</p>">
                     
                     <strong class="experience-title">Graphing Tool</strong>
-                    <em class="experience-details">Java | University Project</em>
+                    <em class="experience-details">Java | Academic Project</em>
                     <ul class="experience-list">
                         <li>FFT analysis and visualization</li>
                         <li>Fractal exploration</li>
@@ -1124,7 +1112,7 @@
 
                     <div class="popup-content" style="display: none;">
                         <h1>Graphing Tool</h1>
-                        <p class="employment-details">Java | University Project</p>
+                        <p class="employment-details">Java | Academic Project</p>
                         
                         <h2>Description</h2>
                         <p>Comprehensive visualization tool for mathematical analysis including Fast Fourier Transform (FFT) analysis, fractal exploration, and Fourier synthesis. Built entirely in Java with custom graphics rendering.</p>
@@ -1307,7 +1295,7 @@
                     data-skill-default="
                         <li>Modern portfolio with glassmorphism design</li>
                         <li>Dynamic skill-based filtering</li>
-                        <li>HAW Hamburg branded theme</li>"
+                        <li>Professional theme</li>"
                     data-skill-programming="
                         <p>HTML5, CSS3, JavaScript with modern web standards.</p>"
                     data-skill-software-tools="
@@ -1318,7 +1306,7 @@
                     <ul class="experience-list">
                         <li>Modern portfolio with glassmorphism design</li>
                         <li>Dynamic skill-based filtering</li>
-                        <li>HAW Hamburg branded theme</li>
+                        <li>Professional theme</li>
                     </ul>
 
                     <div class="popup-content" style="display: none;">
@@ -1326,7 +1314,7 @@
                         <p class="employment-details">Personal Project | 2025</p>
                         
                         <h2>Description</h2>
-                        <p>Modern, interactive portfolio website showcasing professional experience and projects with a unique skill-based filtering system and HAW Hamburg branded design.</p>
+                        <p>Modern, interactive portfolio website showcasing professional experience and projects with a unique skill-based filtering system.</p>
                         
                         <h2>Technical Features</h2>
                         <ul>
@@ -1341,7 +1329,6 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
         <section id="skills" class="section">
             <h2>Technical Skills</h2>
             <div class="projects-grid">
@@ -1388,13 +1375,11 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="footer">
-            <p>© 2025 Alec Jens Klamroth | Information Engineering Student at <a href="https://www.haw-hamburg.de" target="_blank">HAW Hamburg</a></p>
+            <p>© 2025 Alec Jens Klamroth | Software Developer</p>
         </footer>
     </div>
 
-    <!-- Popup Overlay -->
     <div class="popup-overlay" id="popup-overlay">
         <button class="close-btn" id="close-popup">×</button>
     </div>
